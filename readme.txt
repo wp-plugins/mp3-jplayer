@@ -3,7 +3,7 @@ Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
 Tags: mp3, player, jplayer, music player, jplayer wordpress, mp3 player
-Requires at least: 2.8 (lowest tested version)
+Requires at least: 2.8
 Tested up to: 3.0.1
 Stable tag: 1.3.0
 
@@ -89,10 +89,10 @@ To Install manually:
 
 == Screenshots ==
 
-1.Player new style in blue, green, and neutral
-2.Player original style in cyan
-3.The admin settings page
-4.An example playlist on an edit post/page screen 
+1. Player new style in blue, green, and neutral
+2. Player original style in cyan
+3. The admin settings page
+4. An example playlist on an edit post/page screen 
 
 
 == Frequently Asked Questions ==
