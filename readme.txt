@@ -13,7 +13,9 @@ Adds an mp3 player with playlist to any Wordpress pages/posts that you make a pl
 <br />
 == Description ==
 
-MP3-jPlayer automatically adds an mp3 player to any posts/pages that you have created a playlist for. The plugin makes it simple to play mp3’s from your Wordpress media library, or from a default folder, or from another domain, It also lets you add your own titles and captions, or can use your media library titles/captions. No setup is required, just install, activate and start adding tracks.
+MP3-jPlayer automatically adds an mp3 player to any posts/pages that you have created a playlist for. The plugin makes it simple to play mp3's from your Wordpress media library, or from a default folder, or from another domain, It also lets you add your own titles and captions, or can use your media library titles/captions. No setup is required, just install, activate and start adding tracks.
+
+You can see a demo at [www.sjward.org/jplayer-for-wordpress](http://sjward.org/jplayer-for-wordpress).
 
 MP3-jPlayer integrates Happyworm's popular open source jPlayer code into an easy-to-use Wordpress plugin, it also provides you with an admin panel for some useful settings, and a simple method of building playlists on your pages and posts using Wordpress' existing custom fields that are on all post/page edit screens.
 
@@ -28,7 +30,6 @@ MP3-jPlayer integrates Happyworm's popular open source jPlayer code into an easy
 5. Is CSS styleable.
 
 
-<br />
 **Making A Playlist**
 
 Add your mp3's on the page's or post's edit screen using the custom fields (below the content box). Enter them as follows:
@@ -40,7 +41,6 @@ Add your mp3's on the page's or post's edit screen using the custom fields (belo
 *You only need a full URI when the mp3 is not in either your library or your specified default folder (set at the admin settings page), otherwise just enter the filename (you can leave off the file extension).
 
 
-<br />
 **Adding Titles and Captions**
 
 *Add the title in the right hand box before the filename/uri, separate with an @ sign.*
@@ -60,7 +60,6 @@ Note: Your previous caption is normally given to subsequent tracks when they don
 <code>mp3.</code>
 
 
-<br />
 **Ordering the Tracks**
 
 *To control the playlist order simply number the left hand boxes, for example:*
@@ -72,7 +71,6 @@ Any numbered tracks take priority at the top of the playlist with un-numbered tr
 Note: The A-Z sorting option at the settings panel will over-ride any number ordering in the playlists.
 
 
-<br />
 == Installation ==
 
 To install using Wordpress:
@@ -89,16 +87,14 @@ To Install manually:
 3. Activate the plugin via your Wordpress 'Plugins' menu.
 
 
-<br />
 == Screenshots ==
 
-1. Player new style in blue, green, and neutral.
-2. Player original style in cyan.
-3. The admin settings page.
-4. An example playlist on an edit post/page screen. 
+1.Player new style in blue, green, and neutral
+2.Player original style in cyan
+3.The admin settings page
+4.An example playlist on an edit post/page screen 
 
 
-<br />
 == Frequently Asked Questions ==
 
 = Can I have more than one player on the posts index page? =
@@ -125,7 +121,6 @@ The player should now appear and will try to play a test track from the plugin a
 Go to the settings page, uncheck the box labeled 'Remember my settings when plugin is deactivated' and click 'Update Settings', go to the 'Plugins' menu and de-activate MP3-jPlayer, then activate it again to restore the defaults.
  
 
-<br />
 == Changelog ==
 
 = 1.3.0 =
