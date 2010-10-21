@@ -28,7 +28,7 @@ The player has a loader bar and position/vol sliders, status info, hideable play
 [See a Demo here](http://sjward.org/jplayer-for-wordpress)
 
 
-** Shortcode **
+**Shortcode**
 
 Using the shortcode is optional, it lets you position the player within the content rather than at the top, and has 2 optional attributes for position and download control on each page. The shortcode is:
 <code>[mp3-jplayer]</code>
