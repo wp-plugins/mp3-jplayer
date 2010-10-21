@@ -2,10 +2,10 @@
 Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
-Tags: mp3, audio, mp3 player, music, jplayer, music player, audio player, playlist 
+Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, css 
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 Auto adds an mp3 audio player to pages/posts that you make a playlist on.
 
@@ -13,7 +13,10 @@ Auto adds an mp3 audio player to pages/posts that you make a playlist on.
 
 == Description ==
 
-- Easy playing of mp3's from your wordpress library, a default folder, another domain
+This version adds shortcode support
+
+features:
+- Easy playing of mp3's from your media library, a default folder, another domain
 - Use custom fields to make ordered playlists
 - Add titles and captions, use or overide media library titles and captions
 - No setup
@@ -24,6 +27,14 @@ The player has a loader bar and position/vol sliders, status info, hideable play
 
 [See a Demo here](http://sjward.org/jplayer-for-wordpress)
 
+
+** Shortcode **
+
+Using the shortcode is optional, it lets you position the player within the content rather than at the top, and has 2 optional attributes for position and download control on each page. The shortcode is:
+<code>[mp3-jplayer]</code>
+
+It's optional attributes are 'pos' (with values of left, right, none), and 'dload' (true, false), eg:
+<code>[mp3-jplayer pos="right" dload="true"]</code> 
 
 
 **Making a Playlist**
@@ -91,6 +102,9 @@ To Install manually:
 
 
 == Changelog ==
+= 1.3.2 =
+* Added the shortcode [mp3-jplayer] and attributes: pos (left, right, none), dload (true, false) which over-ride the admin-panel position and download settings on that post/page. Eg. [mp3-jplayer pos="right" dload="true"]
+* Tweaked transport button graphic a wee bit.
 
 = 1.3.1 =
 * Fixed image rollover on buttons when wordpress not installed in root of site.
