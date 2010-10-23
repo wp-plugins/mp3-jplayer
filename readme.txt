@@ -2,10 +2,10 @@
 Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
-Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, css 
+Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, css, post, page 
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 
 Auto adds an mp3 audio player to pages/posts that you make a playlist on.
 
@@ -13,17 +13,20 @@ Auto adds an mp3 audio player to pages/posts that you make a playlist on.
 
 == Description ==
 
-This version adds shortcode support
+This version fixes the mis-aligned playlist/buttons on the player that occurred in some wordpress themes.
+
 
 features:
-- Easy playing of mp3's from your media library, a default folder, another domain
-- Use custom fields to make ordered playlists
+- Easy playing of mp3's from your Media Library, a default folder, another domain
+- Make ordered playlists using custom fields
 - Add titles and captions, use or overide media library titles and captions
+- Set a playlist for download
+- Optional shortcode
 - No setup
 - Simple admin panel
-- Uses jPlayer
+- Integrates jPlayer
  
-The player has a loader bar and position/vol sliders, status info, hideable playlist, and optional download mp3 button.
+The player has a loader bar and position/vol sliders, status info, and hideable playlist. There's also an option to add the player to the post index's most recent post with a playlist.  
 
 [See a Demo here](http://sjward.org/jplayer-for-wordpress)
 
@@ -102,6 +105,10 @@ To Install manually:
 
 
 == Changelog ==
+
+= 1.3.3 =
+* Fixed the CSS that caused player to display poorly in some themes.
+
 = 1.3.2 =
 * Added the shortcode [mp3-jplayer] and attributes: pos (left, right, none), dload (true, false) which over-ride the admin-panel position and download settings on that post/page. Eg. [mp3-jplayer pos="right" dload="true"]
 * Tweaked transport button graphic a wee bit.
