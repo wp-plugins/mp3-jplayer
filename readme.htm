@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Readme</title>
+</head>
+<style type="text/css">
+<!--
+body {
+font-family: Lucida Grande, Verdana, sans-serif;
+}
+
+code {
+font-size: 1.3em
+}
+
+
+
+-->
+</style>
+<body>
+
+
+	<h1>MP3-jPlayer</h1>
+
+	<p><em>Auto adds an mp3 audio player to pages / posts that you make a playlist on. Can be customised into themes.</em></p>
+
+	<hr />
+
+	<p>
+	<strong>Contributors:</strong> simon.ward<br />
+	<strong>Donate link:</strong> <br />
+	<strong>Tags:</strong> mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, css, post, page, sidebar<br />
+
+	<strong>Requires at least:</strong> 2.8<br />
+	<strong>Tested up to:</strong> 3.0.1<br />
+	<strong>Stable tag:</strong> 1.3.4	</p>
+
+	<hr />
+
+		<h3>Description</h3>
+	<p>Version 1.3.4 adds a set of template tags for sidebar/header players etc, new shortcode options including centering and download setting, and a smaller player size option.</p>
+
+<p>Features:</p>
+
+<ul>
+<li>No setup.</li>
+<li>Play mp3's from your Media Library, a default folder, another domain.</li>
+<li>Add titles and captions to any mp3.</li>
+
+<li>Set playlists for download.</li>
+<li>Use or overide the library titles/captions.</li>
+<li>Optional shortcode.</li>
+<li>Simple admin panel.</li>
+<li>Template tags.</li>
+<li>CSS styleable.</li>
+<li>Integrates jquery jPlayer, works on the iPad.</li>
+</ul>
+
+<p><br />
+
+<a href="http://sjward.org/jplayer-for-wordpress">See a Demo here</a></p>
+
+<p><br />
+The player can be added to the most recent post on the post index (that has a playlist), or using template tags it can be put in sidebars/headers etc, fed a playlist, appear on archive pages, and set a stylesheet. Player has sliders, loader bar, status info, and optional download button.</p>
+
+<p><br /><br />
+<strong>Making a Playlist</strong></p>
+
+<p>Add tracks on page/post edit screens using the custom fields (below the content box), as follows:</p>
+
+<ol>
+<li><p>In the left box of a new custom-field enter:</p>
+
+<p>mp3</p></li>
+<li><p>Write the filename or URI* of the mp3 into the right box and hit 'Add custom field'.</p></li>
+</ol>
+
+<p>Repeat the above to add more tracks, and hit the 'update/publish' button when you're done.</p>
+
+<p><br />
+*Use a full URI when the mp3 is not in either a) the library or b) from the default folder/uri. You'll need to set the default folder that you want to use on the settings page.</p>
+
+<p><br /><br />
+<strong>Adding a Title</strong></p>
+
+<p>Add titles in the right box, before the filename (or uri), separate with an @ sign, eg:</p>
+
+<pre><code>Title@filename
+</code></pre>
+
+<p><br /><br />
+<strong>Adding aCaption</strong></p>
+
+<p>Add the caption in the left hand box after 'mp3', separate with a dot, eg.</p>
+
+<pre><code>mp3.Caption
+</code></pre>
+
+<p>You can blank out a library caption (or a caption that's been carried over from a previous track) by using just the dot (ie. 'mp3.')</p>
+
+<p><br /><br />
+<strong>Play Order</strong></p>
+
+<p>To control the playlist order number the left hand boxes, eg:</p>
+
+<pre><code>1 mp3
+
+
+2 mp3.Caption
+
+
+3 mp3.Another Caption
+</code></pre>
+
+<p><br /><br />
+<strong>Shortcode</strong></p>
+
+<p>Using the shortcode is optional, it lets you position the player within the content rather than at the top of it, and has 4 optional attributes for controlling the position (pos), download setting (dload), autoplay (play), and show playlist (list) on each page. The shortcode is:</p>
+
+<p><strong><code>&#x5b;mp3-jplayer]</code></strong></p>
+
+<p>The attributes are:</p>
+
+<p>pos: left, right, rel (or none), rel-C, rel-R, absolute</p>
+
+<p>dload: true, false</p>
+
+<p>play: true, false</p>
+
+<p>list: true, false</p>
+
+<p><br />
+for example</p>
+
+<p><strong><code>&#x5b;mp3-jplayer play="true" pos="rel-C" dload="true"]</code></strong></p>
+
+<p><br /><br />
+<strong>Template Tags</strong></p>
+
+<p><strong>Quick example:</strong>
+
+<strong>Make the player move to sidebar on the posts index and play 5 random tracks from your library</strong></p>
+
+<p>Put this in index.php before the posts loop starts:</p>
+
+<pre><code>&lt;?php if ( function_exists('mp3j_flag') ) { mp3j_flag(); } ?&gt;
+</code></pre>
+
+
+<p><br />
+Put this in sidebar.php somewhere below the opening div(s):</p>
+
+<pre><code>&lt;?php 
+if ( function_exists( 'mp3j_grab_library' ) ) { 
+    $lib = mp3j_grab_library();
+    $files = $lib&#x5b;'filenames'];
+    shuffle( $files );
+    $files = array_slice( $files, 0, 5 );
+    mp3j_set_meta( $files );
+    mp3j_put( 'feed' );
+}   
+?&gt;
+
+</code></pre>
+
+<p><br />
+To use the smaller player stylesheet on the above example put this in header.php above wp_head():</p>
+
+<pre><code>&lt;?php 
+if ( function_exists('mp3j_addscripts') ) { 
+    if ( is_home() ) {
+        mp3j_addscripts('/wp-content/plugins/mp3-jplayer/css/mp3jplayer-blu-sidebar.css'); 
+    }
+}
+?&gt;
+</code></pre>
+
+<p><br /><br />
+<strong>Tag Details</strong></p>
+
+<p>Note: there's an admin option to ignore the tags which needs to be unticked when you want to use them!</p>
+
+<p><strong><code>mp3j_addscripts( $style )</code></strong></p>
+
+<ul>
+<li><p>Forces the player's javascript/CSS to be loaded and allows you to change stylesheet. Scripts aren't automatically enqueued on archive pages and any singular that has no playlist of it's own. When used this tag must be placed above wp_head().</p></li>
+<li><p>$style can be either a uri to a stylesheet, or  'styleA', 'styleB', 'styleC', 'styleD' to use one of the included. Defaults to admin setting if not specified.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong><code>mp3j_flag( $set )</code></strong></p>
+
+<ul>
+<li><p>Tells the plugin to ignore content and shortcodes and to wait for an mp3j_put tag. The flag tag can be anywhere and can be used more than once.</p></li>
+
+<li><p>$set can be either 1 (set the flag) or 0 (unset the flag), and is 1 if not specified.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong><code>mp3j_grab_library( $format )</code></strong></p>
+
+<ul>
+<li><p>returns an array of all the mp3's in the library with their 'filenames', 'urls', 'titles', 'excerpts', and 'descriptions'. Can be used anywhere.</p></li>
+<li><p>$format can be either 1 (gives back the above fields in indexed arrays) or 0 (gives back the arrays as returned from the select query), defaults to 1.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong><code>mp3j_set_meta( $tracks, $captions )</code></strong></p>
+
+<ul>
+<li><p>Sets an on-the-fly playlist for the mp3j_put tag to pick up. Can be used anywhere to create a playlist. The arrays you feed in go through the same sorting/filtering routine as if the tracks had been pulled from a page or post, and still respond to the admin settings like 'hide file extension' or 'play in alphabetical order'.</p></li>
+<li><p>$tracks must be an indexed array of any mix of either filenames (from default folder or library) or full uri's, and can include a prefixed title using an '@' as a separator same as the fields do. As the admin settings are still applied, if 'always use library titles..' is ticked and it's a library 'filename' that you're using then any corresponding caption in the $captions array won't make it through, to get control of titles and captions for library files use their 'urls' in the $tracks array.</p></li>
+<li><p>$captions is an optional array, the indexes should correspond to the indexes of their files in the $tracks array.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong><code>mp3j_put( $mode, $position, $dload, $autoplay, $playlist )</code></strong></p>
+
+<ul>
+<li><p>Puts the player on the page (but only if mp3j_flag is set and what you're asking it to play results in some tracks!). Can be used multiple times and must be within the &lt;body&gt;&lt;/body&gt; section of a page.</p></li>
+<li><p>$mode can be: A post id to grab tracks from; 'first' to pick up the tracks from the first content encountered that had a playlist (see note below); 'feed' to pick up an alternative playlist created with mp3j_set_meta; or not set ('') to pick up tracks from any current id;</p></li>
+<li><p>$pos can be 'left', 'right' for float; 'none', 'rel-C', 'rel-R' for relative position; or 'absolute'). Defaults to admin setting</p></li>
+<li><p>$dload - show download button, 'true' or 'false'. defaults to admin setting.</p></li>
+<li><p>$autoplay - 'true' or 'false'. defaults to admin setting.</p></li>
+<li><p>$playlist - start with playlist showing, 'true' or 'false'. defaults to admin setting.</p></li>
+
+<li><p>Note on 'first': Typically you'd use this on an index page when the player is in the sidebar (ie. when the put tag comes after the loop has run) and you want to play the most recent tracks post. If there is no first id to collect (when no posts have a playlist) the player would not be added, to set a backup use another put tag directly underneath the first with $mode set to some id you want to pick up tracks from, or set to 'feed' to pick up an alternative playlist you've created using mp3j_set_meta.</p></li>
+<li><p>Another note on 'first': Because it actually waits for the content and has a look for tracks, it won't do anything if the put tag using 'first' is above the loop. To get header players to play the first post with tracks you either have to put the put-tag in a div after the loop and css absolute position it, or query the upcoming posts and use the id.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong><code>mp3j_debug($info)</code></strong></p>
+
+<ul>
+<li><p>Prints some info and variables from the plugin to the browser's source view (CTRL+U or Page-&gt;view source) about what content and tags appeared on the page that just ran. Can be used more than once to get info at different points in page. Can be useful for debugging when customising templates.</p></li>
+<li><p>$info can be 'vars' to see info only or 'all' to also see meta and library arrays (a potentially long list), defaults to vars.</p></li>
+
+</ul>
+
+<p><br /><br />
+Best to use function_exists() to make sure the tags exist before running them, eg:</p>
+
+<pre><code>&lt;?php if ( function_exists('mp3j_addscripts') ) { mp3j_addscripts('styleD'); } ?&gt;
+</code></pre>
+
+<p>Running them without checking when the plugin is not activated will throw an error.</p>
+
+<p><br /></p>	<hr />
+		<h3>Installation</h3>
+
+	<p>To install using Wordpress:</p>
+
+<ol>
+<li>Download the zip file to your computer.</li>
+<li>Log in to your Wordpress admin and go to 'plugins' -&gt; 'Add New'.</li>
+<li>Click 'Upload' at the top of the page then browse' for the zip file on your computer and hit the 'Install' button, Wordpress should install it for you.</li>
+<li>Once installed go to your Wordpress 'Plugins' menu and activate MP3-jPlayer.</li>
+</ol>
+
+<p>To Install manually:</p>
+
+<ol>
+<li>Download the zip file and unzip it. </li>
+<li>Open the unzipped folder and upload the entire contents (1 folder and it's files and subfolders) to your <code>/wp-content/plugins</code> directory on the server.</li>
+<li>Activate the plugin via your Wordpress 'Plugins' menu.</li>
+</ol>	<hr />
+		<h3>Frequently Asked Questions</h3>
+
+	<h4>Can the player go in the header/sidebar?</h4>
+
+<p>Yes from this version 1.3.4 if you use template tags. It's not a widget yet so you can't do it from the admin area currently.</p>
+
+<h4>Why is the default folder set to your domain?</h4>
+
+<p>It's not anymore, it was going to be for testing a default install without needing to know any mp3's. So you could activate, go to a page and use 'test' as the filename and it would play that file from my domain, but a)i forgot to mention it, and b)it's prob not that useful. On fresh install it's now set to the root of your domain.</p>	<hr />
+		<h3>Screenshots</h3>
+	<ol>
+
+<li>Player</li>
+<li>Admin settings page</li>
+<li>Playlist example</li>
+</ol>	<hr />
+		<h3>Changelog</h3>
+	<h4>1.3.4</h4>
+
+<ul>
+<li>Added template tags.</li>
+
+<li>Added new shortcode attributes play and list, and added more values for pos.</li>
+<li>Added new default position options on settings page</li>
+<li>Added a smaller player option</li>
+</ul>
+
+<h4>1.3.3</h4>
+
+<ul>
+<li>Fixed the CSS that caused player to display poorly in some themes.</li>
+</ul>
+
+<h4>1.3.2</h4>
+
+<ul>
+<li>Added the shortcode [mp3-jplayer] and attributes: pos (left, right, none), dload (true, false) which over-ride the admin-panel position and download settings on that post/page. Eg. [mp3-jplayer pos="right" dload="true"]</li>
+<li>Tweaked transport button graphic a wee bit.</li>
+</ul>
+
+<h4>1.3.1</h4>
+
+<ul>
+<li>Fixed image rollover on buttons when wordpress not installed in root of site.</li>
+</ul>
+
+<h4>1.3.0</h4>
+
+<ul>
+<li>Updated jquery.jplayer.min.js to version 1.2.0 (including the new .swf file). The plugin should now work on the iPad.</li>
+<li>Fixed admin side broken display of the uploads folder path that occured when a path had been specified but didn't yet exist.</li>
+<li>Fixed the broken link to the (new) media settings page when running in Wordpress 3.</li>
+<li>Changed the 'Use my media library titles...' option logic to allow any titles or captions to independently over-ride the library by default. The option is now 'Always use my media library titles...' which when ticked will give preference to library titles/captions over those in the custom fields.</li>
+<li>Modified the css for compatibility with Internet Explorer 6. The player should now display almost the same in IE6 as in other browsers.</li>
+</ul>
+
+<h4>1.2.12</h4>
+
+<ul>
+<li>Added play order setting, a 'download mp3' link option, show/hide playlist and option, a connecting state, a new style.  </li>
+<li>The 'Default folder' option can now be a remote uri to a folder, if it is then it doesn't get filtered from the playists when 'allow remote' is unticked. </li>
+</ul>
+
+<h4>1.2.0</h4>
+
+<ul>
+<li>Added playing of media library mp3's in the same way as from the default folder (ie. by entering just a filename). User does not have to specify where the tracks reside (recognises library file, default folder file, and local or remote uri's). </li>
+<li>Added filter option to remove off-site mp3's from the playlists.</li>
+<li>The plugin now clears out it's settings from the database by default upon deactivation. This can be changed from the settings page.</li>
+
+<li>It's no longer necessary to include the file extension when writing filenames.</li>
+</ul>
+
+<h4>1.1.0</h4>
+
+<ul>
+<li>Added captions, player status info, a-z sort option, basic player positioning, detecting of urls/default folder</li>
+<li>Fixed bug where using unescaped double quotes in a title broke the playlist, quotes are now escaped automatically and can be used.</li>
+</ul>
+
+<h4>1.0</h4>
+
+<ul>
+<li>First release</li>
+</ul>	<hr />
+
+
+</body></html>
