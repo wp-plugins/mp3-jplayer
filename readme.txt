@@ -7,7 +7,7 @@ Requires at least: 2.8
 Tested up to: 3.0.4
 Stable tag: 1.4.1
 
-An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML 5 / Flash, works on iphone and ipad.
+An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad.
 
 
 == Description ==
@@ -39,7 +39,7 @@ Features -
 * Optional shortcode and parameters
 * A set of template-tags
 * Fully CSS styleable
-* Integrates Happyworm's jquery.jplayer that can use HTML 5 or Flash as needed.
+* Integrates Happyworm's jquery.jplayer that can use HTML5 or Flash as needed.
 
 
 <br />  
