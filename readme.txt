@@ -5,13 +5,15 @@ Contributors: simon.ward
 Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 
 An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML 5 / Flash, works on iphone and ipad.
 
 
 == Description ==
-New in 1.4.0 -
+Version 1.4.1 makes repeat playing optional from admin, fixes the text-player buttons CSS in Opera, and fixes the initial-volume setting where the slider was being set but not the volume.
+
+New since 1.4.0 -
 
 * A sidebar widget
 * A text based player style
@@ -212,6 +214,12 @@ Yes if your theme has header/footer widget areas, if it doesn't then you can use
 
 
 == Changelog ==
+
+= 1.4.1 =
+* Added a repeat play option on settings page.
+* Fixed text-player buttons css in Opera.
+* Fixed initial-volume setting error where only the slider was being set and not the volume. Thanks to Darkwave for letting me know.
+
 
 = 1.4.0 =
 * Added a widget.
