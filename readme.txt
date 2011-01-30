@@ -7,7 +7,7 @@ Requires at least: 2.8
 Tested up to: 3.1
 Stable tag: 1.4.2
 
-An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad.
+An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad. 
 
 
 == Description ==
