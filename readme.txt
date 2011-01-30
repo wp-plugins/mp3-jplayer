@@ -4,26 +4,16 @@ Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
 Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
-Tested up to: 3.0.4
-Stable tag: 1.4.1
+Tested up to: 3.1
+Stable tag: 1.4.2
 
 An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad.
 
 
 == Description ==
-Version 1.4.1 makes repeat playing optional from admin, fixes the text-player buttons CSS in Opera, and fixes the initial-volume setting where the slider was being set but not the volume.
+1.4.2 fixes an error with the widget handling (it's scripts weren't being loaded in some themes and widget areas). Also fixed are the library captions that weren't showing up when using widget modes 2/3, and a css fix that should re-align the buttons that were still out-of-place in some themes.
 
-New since 1.4.0 -
-
-* A sidebar widget
-* A text based player style
-* Easy play of entire folders and library
-* Randomise playlists
-* Show library and local folder filenames on admin page
-* Set a custom stylesheet from admin
-* Playlist numbering optional
-* More shortcode options
-* Better help on the admin page
+Recently added - sidebar widget, text based player style, easy play of entire folders and library, randomise playlists, set custom stylesheet from admin.
 
 
 [See a Demo here](http://sjward.org/jplayer-for-wordpress)
@@ -39,14 +29,14 @@ Features -
 * Optional shortcode and parameters
 * A set of template-tags
 * Fully CSS styleable
-* Integrates Happyworm's jquery.jplayer that can use HTML5 or Flash as needed.
+* Integrates Happyworm's jquery.jplayer that can use HTML 5 or Flash as needed.
 
 
 <br />  
 The plugin plays your mp3's by looking in the page/post custom fields for any playlist you have written. The player is added automatically when it picks up a playlist to play. You can also write a playlist in the widget.
 
 
-<br>
+<br />
 **Widget**
 
 Drag the player widget into one of your sidebars and set it's playback mode or playlist. Use the page filter to include-only or exclude any pages and posts. You can use multiple widgets to set different playlists for different pages. 
@@ -202,7 +192,7 @@ To Install manually:
 Yes, by widgets or template-tags.
 
 = Can the player go in the header/footer? =
-Yes if your theme has header/footer widget areas, if it doesn't then you can use template-tags to place the player anywhere in the theme.
+Yes if your theme has header/footer widget areas, if it doesn't then you can still use the template-tags.
 
 
 == Screenshots ==
@@ -215,10 +205,15 @@ Yes if your theme has header/footer widget areas, if it doesn't then you can use
 
 == Changelog ==
 
+= 1.4.2 =
+* Fixed error in the scripts handling for the widget, thanks to kathy for reporting.
+* Fixed the non-showing library captions when using widget modes 2/3 to play library files.
+* Fixed (hopefully) the mis-aligned buttons that were still happening in some themes.
+
 = 1.4.1 =
 * Added a repeat play option on settings page.
 * Fixed text-player buttons css in Opera.
-* Fixed initial-volume setting error where only the slider was being set and not the volume. Thanks to Darkwave for letting me know.
+* Fixed initial-volume setting error where only the slider was being set and not the volume. Thanks to Darkwave for reporting.
 
 
 = 1.4.0 =
