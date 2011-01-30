@@ -39,7 +39,7 @@ The plugin plays your mp3's by looking in the page/post custom fields for any pl
 <br />
 **Widget**
 
-Drag the player widget into one of your sidebars and set it's playback mode or playlist. Use the page filter to include-only or exclude any pages and posts. You can use multiple widgets to set different playlists for different pages. 
+Drag the player widget into one of your sidebars and set it's playback mode or playlist. Use the page filter to include-only or exclude any pages and posts. You can use multiple widgets to set different playlists for different pages.
 
 
 <br />
