@@ -4,7 +4,7 @@ Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
 Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
-Tested up to: 3.1
+Tested up to: 3.0.5
 Stable tag: 1.4.3
 
 An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad.
