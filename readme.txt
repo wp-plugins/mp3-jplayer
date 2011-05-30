@@ -2,208 +2,143 @@
 Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
-Tags: mp3, audio, player, music, jplayer, integration, music player, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
+Tags: mp3, audio, player, music, jplayer, integration, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
-Tested up to: 3.0.5
-Stable tag: 1.4.3
+Tested up to: 3.1.3
+Stable tag: 1.7
 
-An mp3 player for pages and posts, optional widget and shortcode, template tags. HTML5 / Flash, works on iphone and ipad.
-
+Add mp3 players to posts, pages, and sidebars. HTML5 / Flash.
 
 == Description ==
-1.4.3 adds minor CSS fixes that correct the player's buttons for 'Modularity Lite' and 'Portfolio Press' themes. Also fixed is stylesheet changing via the mp3j_addscripts() template tag (the CSS was not loaded in some cases). 
 
-Recently added - sidebar widget, text based player style, easy play of entire folders and library, randomise playlists, set custom stylesheet from admin.
+- Multi-player
+- Playlist and single-file players.
+- Pop-out player.
+- Individual control of height, width, volume, download etc.
+- Customise the colour scheme on the settings page.
+- Good compatibility across browsers/platforms, uses HTML5 or Flash.
+- Uses a single instance of jPlayer by Happyworm
+- Editable player designs via CSS
 
+Add players using shortcodes, widgets, and template tags. See the help on the settings page for a full list of options.
 
-[See a Demo here](http://sjward.org/jplayer-for-wordpress)
-
-
-Features -
-
-* No setup
-* Play from your Media Library, a default folder, another domain
-* Set playlists for download
-* Add titles and captions
-* Optional widget with playlist and page-filter control
-* Optional shortcode and parameters
-* A set of template-tags
-* Fully CSS styleable
-* Integrates Happyworm's jquery.jplayer that can use HTML 5 or Flash as needed.
-
-
-<br />  
-The plugin plays your mp3's by looking in the page/post custom fields for any playlist you have written. The player is added automatically when it picks up a playlist to play. You can also write a playlist in the widget.
-
+[See Demo here](http://sjward.org/jplayer-for-wordpress)
 
 <br />
-**Widget**
+<br />
+**Shortcodes**
 
-Drag the player widget into one of your sidebars and set it's playback mode or playlist. Use the page filter to include-only or exclude any pages and posts. You can use multiple widgets to set different playlists for different pages. 
-
+[mp3j] and [mp3t] add single-track players
 
 <br />
-**Writing a playlist in the custom fields**
-
-Add tracks on page/post edit screens using the custom fields (below the content box), as follows:
-
-1. Enter <code>mp3</code> into the left hand box, this is the 'key' that the plugin looks for when reading the custom fields and you must always add it.
-
-2. Write the filename/URI* into the right hand box and hit 'add custom field'
-
-
-Repeat the above to add more tracks, and hit the 'Update page' button when you're done.
-
-*Use a full URI when the mp3 is not in either a) the library or b) from the default folder/uri.
-
+eg. Play a url:
+<code>[mp3j track="www.site.com/tune.mp3"]</code>
 
 <br />
-**Adding Titles and captions**
-
-1. Add a dot, then a caption in the left hand box, eg: <code>mp3.Caption</code>
-
-2. Add the title, then an '@' before the filename, eg: <code>Title@filename</code>
-
+eg. Play a library or default folder mp3:
+<code>[mp3j track="myfile.mp3"]</code>
 
 <br />
-**Play Order**
-
-To control the playlist order number the left hand boxes, eg: <code>1 mp3</code> will be first on the playlist. Un-numbered tracks appear below any numbered tracks.
-
-<br />
-**Playing a folder, the library, or another playlist**
-
-Use these special commands in the value (right) box:
-
-<code>FEED:LIB</code> Plays the entire library
-<br />
-
-<code>FEED:DF</code> Plays all from the default folder
-<br />
-
-<code>FEED:/mytunes</code> Play all from the local folder path /mytunes
-<br />
-
-<code>FEED:ID</code> Play the list from another ID (the id to pick up is set with the shortcode)
-
+eg. Play track 30 from custom-fields playlist/folder:
+<code>[mp3j track="30"]</code>
 
 <br />
-**Shortcode**
+eg Play incrementally from custom-fields playlist/folder:
+<code>[mp3j]</code>
 
-The shortcode is optional, it lets you position the player within the content and has 7 optional attributes for controlling the position (pos), download setting (dload), autoplay (play), playlist state (list), page ID (id), shuffle tracks (shuffle), take a random selection (slice). The shortcode is:
+<br /><br />
 
-**<code>[mp3-jplayer]</code>**
+[mp3-jplayer] adds playlist players
 
-
-The attributes are:
-
-pos: left, right, rel, rel-C, rel-R, absolute
-
-dload: true, false
-
-play: true, false
-
-list: open, closed, hidden, radio
-
-id: (a page ID to pick up a playlist from when using 'FEED:ID' above)
-
-shuffle: true
-
-slice: (the number of tracks)
+eg. Play files, url's, folders:
+<code>[mp3-jplayer tracks="myfile1.mp3, myfile2.mp3, myfile3.mp3"]</code>
 
 <br />
-eg.
-
-**<code>[mp3-jplayer id="7" list="hidden" pos="rel-C" shuffle="true"]</code>**
-
+eg. Play a folder:
+<code>[mp3-jplayer tracks="FEED:/myfolder"]</code>
 
 <br />
-**Template Tags**
-
-**<code>mp3j_addscripts( $style )</code>**
-
-**<code>mp3j_flag( $set )</code>**
-
-**<code>mp3j_grab_library( $format )</code>**
-
-**<code>mp3j_set_meta( $tracks, $captions )</code>**
-
-**<code>mp3j_put( $mode, $position, $dload, $autoplay, $playlist )</code>**
-
-**<code>mp3j_debug($info)</code>**
-
-<br>
-Here's a quick example to make the player move to the sidebar on the posts index page and play 5 random tracks from your library
-
-Put this in index.php before the posts loop starts:
-
-`<?php if ( function_exists('mp3j_flag') ) { mp3j_flag(); } ?>`
+eg. Play custom fields:
+<code>[mp3-jplayer]</code>
 
 <br />
-Put this in sidebar.php somewhere below the opening div (note this is simplistic code, you'll need at least 5 tracks in your library for it to work):
-
-`<?php 
-if ( function_exists( 'mp3j_grab_library' ) ) { 
-	$lib = mp3j_grab_library();
-	$files = $lib['filenames'];
-	shuffle( $files );
-	$files = array_slice( $files, 0, 5 );
-	mp3j_set_meta( $files );
-	mp3j_put( 'feed' );
-} 	
-?>`
-
-
+eg. Play random library mp3's:
+<code>[mp3-jplayer pick="7" shuffle="y" tracks="FEED:LIB"]</code>
 <br />
-Finally, to set the smaller player stylesheet for the posts index only, put this in header.php above wp_head(): 
 
-`<?php 
-if ( function_exists('mp3j_addscripts') ) { 
-	if ( is_home() ) {
-		mp3j_addscripts('/wp-content/plugins/mp3-jplayer/css/mp3jplayer-blu-sidebar.css'); 
-	}
-}
-?>`
+Other examples:
 
+<code>[mp3t vol="70" loop="y" track="myfile.mp3"]</code>
 
-See the help in the plugin for more info
+<code>[mp3-jplayer width="30%" height="80px" autoplay="y" tracks="FEED:DF"]
+
+<code>[mp3j flip="y"]</code>
+
+See more help in the plugin.
 
 
 == Installation ==
 
-To install using Wordpress:
+Install using WordPress:
 
-1. Download the zip file to your computer.
-2. Log in to your Wordpress admin and go to 'plugins' -> 'Add New'.
-3. Click 'Upload' at the top of the page then browse' for the zip file on your computer and hit the 'Install' button, Wordpress should install it for you.
-4. Once installed go to your Wordpress 'Plugins' menu and activate MP3-jPlayer.
+1. Log in and go to 'plugins' -> 'Add New'.
+3. Search for 'mp3-jplayer' and hit the 'Install now' link in the results, Wordpress will install it.
+4. Activate the plugin.
 
-To Install manually:
+Install manually:
 
 1. Download the zip file and unzip it. 
 2. Open the unzipped folder and upload the entire contents (1 folder and it's files and subfolders) to your `/wp-content/plugins` directory on the server.
-3. Activate the plugin via your Wordpress 'Plugins' menu.
-
+3. Activate the plugin through the WordPress 'Plugins' menu.
 
 
 == Frequently Asked Questions ==
 
-= Can the player go in the sidebar? =
-Yes, by widgets or template-tags.
+= Supported file formats? =
+Just mp3 files.
 
-= Can the player go in the header/footer? =
-Yes if your theme has header/footer widget areas, if it doesn't then you can still use the template-tags.
+= Theme requirements? =
+Themes need the wp_head() and wp_footer() calls in them.
+
+= Mp3 encoding? =
+Mp3's should be constant bit-rate (CBR) encoded at sample rates 44.1kHz, 22.05 kHz, 11.025 kHz, though variable bit-rate (VBR) files seem to work ok.
+
+= Player says connecting but never plays? =
+Check the filename spelling and the path/uri are correct. Remove any accented letters from mp3 filenames (and re-upload if they're from the library). Check the mp3 encoding (see above).
+
+= Header and footer players? =
+Use widget areas (if available), or use the mp3j_addscripts() and mp3j_put() functions in template files. See help in the plugin for an example.
+
+= Report bugs/issues? =
+Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 
 == Screenshots ==
 
-1. Included player styles
-2. Main admin page
-3. Widget panel
-3. Playlist example written into the custom fields 
+1. Example players 1
+2. Example players 2,
+3. Popout player 
+4. Admin settings page
+5. Colour settings
+6. Other options
 
 
 == Changelog ==
+
+= 1.7 =
+* Added multiple players ability, backwards compatible (see notes below).
+* Added single-file players.
+* Added pop-out.
+* Added colour picker to settings.
+* Added player width and height settings, captions (or titles) will word-wrap.
+* Added shortcodes widget.
+* Updated jQuery UI and fixed script enqueuing.
+* Fixed page filter for widget, added index and archive options.
+* Changed ul transport to div (for better stability across themes).
+* General improvements and bug fixes.
+* NOTE 1: File extensions must be used (previously it was optional).
+* NOTE 2: Shortcodes are needed to add players within the content (previously it was optional). 
+* NOTE 3: CSS has changed (id's changed to classes, most renamed), old sheets won't work without modification.
 
 = 1.4.3 =
 * Fixed player buttons for Modularity Lite and Portfolio Press themes (they were disappearing / misaligned when player was in sidebar), thanks to Nate, Jeppe, and Nicklas for the reports.
