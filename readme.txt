@@ -5,7 +5,7 @@ Contributors: simon.ward
 Tags: mp3, audio, player, music, jplayer, integration, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
 Tested up to: 3.1.3
-Stable tag: 1.4.3
+Stable tag: 1.7
 
 Add mp3 players to posts, pages, and sidebars. HTML5 / Flash.
 
