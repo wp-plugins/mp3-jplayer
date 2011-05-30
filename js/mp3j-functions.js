@@ -1,4 +1,4 @@
-/*	MP3-jPlayer common functions js 
+/*	MP3-jPlayer common functions js  
 	1.7	*/
 
 /* Setup ======================= */
