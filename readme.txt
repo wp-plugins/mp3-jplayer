@@ -5,7 +5,7 @@ Contributors: simon.ward
 Tags: mp3, audio, player, music, jplayer, integration, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
 Requires at least: 2.8
 Tested up to: 3.1.3
-Stable tag: 1.7
+Stable tag: 1.7.1
 
 Add mp3 players to posts, pages, and sidebars. HTML5 / Flash.
 
@@ -115,15 +115,20 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 == Screenshots ==
 
-1. Example players 1
-2. Example players 2,
+1. Players eg.1
+2. Players eg.2
 3. Popout player 
-4. Admin settings page
-5. Colour settings
-6. Other options
+4. Players eg.3
+5. Admin settings page
+6. Colour settings
+7. Other options
 
 
 == Changelog ==
+
+= 1.7.1 =
+* Fixed widgets on search pages, and added 'search' as an include/exclude value for the page filter.
+* Fixed default colours pick-up when using template tags, and the indicator on single players.
 
 = 1.7 =
 * Added multiple players ability, backwards compatible (see notes below).
