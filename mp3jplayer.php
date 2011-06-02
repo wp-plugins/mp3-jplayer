@@ -21,7 +21,7 @@ License: GPL2
 	
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 	
 	
@@ -91,7 +91,7 @@ if ( isset($mp3_fox) )
 		}
 	}
 	
-	// Depreciated since 1.7 
+	// Depreciated since 1.7 //
 	function mp3j_set_meta( $tracks, $captions = "", $startnum = 1 ) {
 		if ( empty($tracks) || !is_array($tracks) ) {
 			return;
