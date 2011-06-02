@@ -2,8 +2,8 @@
 /* 
 Plugin Name: MP3-jPlayer
 Plugin URI: http://sjward.org/jplayer-for-wordpress
-Description: Adds a settings page, a bunch of shortcodes, and a widget for playing mp3's. Multi-player, CSS customisable, HTML5/Flash. 
-Version: 1.7
+Description: Add mp3 players to posts, pages, and sidebars. HTML5 / Flash. Shortcodes, widgets, and template tags. See the help on the settings page for a full list of options. 
+Version: 1.7.1
 Author: Simon Ward
 Author URI: http://www.sjward.org
 License: GPL2
