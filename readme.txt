@@ -129,6 +129,7 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 = 1.7.1 =
 * Fixed widgets on search pages, and added 'search' as an include/exclude value for the page filter.
 * Fixed default colours pick-up when using template tags, and the indicator on single players.
+*
 
 = 1.7 =
 * Added multiple players ability, backwards compatible (see notes below).
