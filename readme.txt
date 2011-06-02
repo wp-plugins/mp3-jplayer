@@ -70,7 +70,7 @@ Other examples:
 
 <code>[mp3t vol="70" loop="y" track="myfile.mp3"]</code>
 
-<code>[mp3-jplayer width="30%" height="80px" autoplay="y" tracks="FEED:DF"]
+<code>[mp3-jplayer width="30%" height="80px" autoplay="y" tracks="FEED:DF"]</code>
 
 <code>[mp3j flip="y"]</code>
 
