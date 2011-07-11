@@ -59,7 +59,7 @@ if ( isset($mp3_fox) )
 		do_action('mp3j_addscripts', $style);
 	}
 	
-	// Depreciated since 1.6
+	// depreciated since 1.6
 	function mp3j_flag( $set = 1 ) {
 		do_action('mp3j_flag', $set);
 	}
