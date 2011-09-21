@@ -91,7 +91,7 @@ if ( isset($mp3_fox) )
 		}
 	}
 	
-	// Depreciated since 1.7 // 
+	// depreciated since 1.7 // 
 	function mp3j_set_meta( $tracks, $captions = "", $startnum = 1 ) {
 		if ( empty($tracks) || !is_array($tracks) ) {
 			return;
