@@ -2,27 +2,35 @@
 Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
-Tags: mp3, audio, player, music, jplayer, integration, mp3 player, playlist, media, jquery, javascript, plugin, shortcode, widget, widgets, css, posts, page, sidebar 
+Tags: mp3, audio, mp3 player, music player, audio player, jplayer, playlist, jquery, shortcode, widget, css, posts, page, sidebar 
 Requires at least: 2.8
-Tested up to: 3.2
-Stable tag: 1.7.1
+Tested up to: 3.2.1
+Stable tag: 1.7.2
 
-Add mp3 players to posts, pages, and sidebars. HTML5 / Flash.
+Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
 
 == Description ==
 
-- Multi-player
+- Flexible multi-player plugin.
 - Playlist and single-file players.
 - Pop-out player.
 - Individual control of height, width, volume, download etc.
 - Customise the colour scheme on the settings page.
-- Good compatibility across browsers/platforms, uses HTML5 or Flash.
-- Uses a single instance of jPlayer by Happyworm
-- Editable player designs via CSS
+- Uses a single instance of [jPlayer by Happyworm](http://jplayer.org/)
+- Good compatibility across browsers/platforms. Works on iPhone 4, iPad. Uses HTML 5 or Flash if necessary.
+- Editable player designs via CSS.
 
-Add players using shortcodes, widgets, and template tags. See the help on the settings page for a full list of options.
+[View Demo here](http://sjward.org/jplayer-for-wordpress)
 
-[See Demo here](http://sjward.org/jplayer-for-wordpress)
+<br />
+This plugin lets you add mp3 players to your site using shortcodes, widgets, and template tags. There's useful stuff on the settings page such as default folder setting, mp3 file lists, and plenty of shortcode parameters to control things like width, height, autoplay, volume etc. 
+
+You can play entire folders with one simple command, or the library, or make playlists track by track, randomise them, add titles and captions (or use the library ones), set playlists for download, hide your urls.
+
+Widgets and tags can automatically pick up your track lists from posts/pages, or have their own playlists.
+
+As only the one instance of jPlayer is created there's no loss of performance or speed however many players you put on a page.
+
 
 <br />
 <br />
@@ -51,30 +59,27 @@ eg Play incrementally from custom-fields playlist/folder:
 [mp3-jplayer] adds playlist players
 
 eg. Play files, url's, folders:
-<code>[mp3-jplayer tracks="myfile1.mp3, myfile2.mp3, myfile3.mp3"]</code>
+<code>[mp3-jplayer tracks="file.mp3, url, FEED:/myfolder"]</code>
 
 <br />
-eg. Play a folder:
-<code>[mp3-jplayer tracks="FEED:/myfolder"]</code>
+eg. Play custom fields and shuffle them:
+<code>[mp3-jplayer shuffle="y"]</code>
 
 <br />
-eg. Play custom fields:
-<code>[mp3-jplayer]</code>
-
-<br />
-eg. Play random library mp3's:
-<code>[mp3-jplayer pick="7" shuffle="y" tracks="FEED:LIB"]</code>
+eg. Play 7 random library mp3's:
+<code>[mp3-jplayer pick="7" tracks="FEED:LIB"]</code>
 <br />
 
 Other examples:
 
 <code>[mp3t vol="70" loop="y" track="myfile.mp3"]</code>
 
-<code>[mp3-jplayer width="30%" height="80px" autoplay="y" tracks="FEED:DF"]
+<code>[mp3-jplayer width="30%" height="80px" autoplay="y" tracks="FEED:DF"]</code>
 
 <code>[mp3j flip="y"]</code>
 
-See more help in the plugin.
+<br />
+Please see the help on the plugin's settings page for more info and a full list of parameters.
 
 
 == Installation ==
@@ -109,26 +114,39 @@ Check the filename spelling and the path/uri are correct. Remove any accented le
 = Header and footer players? =
 Use widget areas (if available), or use the mp3j_addscripts() and mp3j_put() functions in template files. See help in the plugin for an example.
 
+= Player appears but something is broken? =
+Any number of reasons but the most commonly seen problem is poor use of a CDN or jQuery in theme files. Don't just shove your scripts in the header unless you like breaking stuff!
+
 = Report bugs/issues? =
 Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 
 == Screenshots ==
 
-1. Players eg.1
-2. Players eg.2
-3. Popout player 
-4. Players eg.3
-5. Admin settings page
-6. Colour settings
-7. Other options
+1. Players example 1
+2. Players example 2
+3. Popout player example 
+4. Players example 3
+5. Players example 4
+6. Admin settings page
+7. Colour settings
+8. Other options
 
 
 == Changelog ==
 
+= 1.7.2 =
+* Fixed bug in the case where sidebars_widgets array was not defined (was throwing a php warning), thanks to Craig for reporting.
+* Fixed bug on search pages where full post content was being used (players in posts were breaking unless a player widget was present), thanks to Marco for reporting.
+* Fixed loop parameter in single players (wasn't responding to 'n' or '0'). Thanks to George for reporting.
+* Corrected the template tag handling so that it can auto pick-up mp3's from post fields on index/archive/search pages. 
+* Fixed the 'text' player's colour pickup for the popout, and refined it's layout a little.
+* Changed from using depreciated wp user-levels to capabilities for options page setup (was throwing a wp_debug warning).
+* Corrected typos in the plugin help (invasion of capitalised L's).
+
 = 1.7.1 =
-* Fixed widgets on search pages, and added 'search' as an include/exclude value for the page filter.
-* Fixed default colours pick-up when using template tags, and the indicator on single players.
+* Fixed widgets on search pages, and added 'search' as an include/exclude value for the page filter. Thanks to Flavio for reporting.
+* Fixed pick-up of default colours when using template tags, and the indicator on single players.
 
 = 1.7 =
 * Added multiple players ability, backwards compatible (see notes below).
