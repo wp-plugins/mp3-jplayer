@@ -18,7 +18,7 @@ Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer
 - Customise the colour scheme on the settings page.
 - Uses a single instance of [jPlayer by Happyworm](http://jplayer.org/)
 - Good compatibility across browsers/platforms. Works on iPhone 4, iPad. Uses HTML 5 or Flash if necessary.
-- Editable player designs via CSS.
+- Editable player designs via CSS
 
 [View Demo here](http://sjward.org/jplayer-for-wordpress)
 
