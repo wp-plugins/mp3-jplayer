@@ -3,7 +3,7 @@
 Plugin Name: MP3-jPlayer
 Plugin URI: http://sjward.org/jplayer-for-wordpress
 Description: Add mp3 players to posts, pages, and sidebars. HTML5 / Flash. Shortcodes, widgets, and template tags. See the help on the settings page for a full list of options. 
-Version: 1.7.1
+Version: 1.7.2
 Author: Simon Ward
 Author URI: http://www.sjward.org
 License: GPL2
@@ -21,11 +21,11 @@ License: GPL2
 	
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 	
 	
-/* grab class definitions */
+/* Grab class definitions */
 $mp3jpath = dirname(__FILE__);
 include_once( $mp3jpath . '/mp3j_main.php');
 include_once( $mp3jpath . '/mp3j_frontend.php'); // extends main
@@ -47,7 +47,8 @@ if ( isset($mp3_fox) )
 			}
 			if ( function_exists('add_options_page') ) {
 				// settings menu page
-				$pluginpage = add_options_page('MP3 jPlayer', 'MP3 jPlayer', 9, basename(__FILE__), array(&$mp3_fox, 'printAdminPage'));  
+				//$pluginpage = add_options_page('MP3 jPlayer', 'MP3 jPlayer', 9, basename(__FILE__), array(&$mp3_fox, 'printAdminPage'));  
+				$pluginpage = add_options_page('MP3 jPlayer', 'MP3 jPlayer', 'manage_options', basename(__FILE__), array(&$mp3_fox, 'printAdminPage'));  
 				add_action( 'admin_head-'. $pluginpage, array(&$mp3_fox, 'mp3j_admin_header') ); 
 				add_action( 'admin_footer-'. $pluginpage, array(&$mp3_fox, 'mp3j_admin_footer') );
 			}
@@ -59,7 +60,7 @@ if ( isset($mp3_fox) )
 		do_action('mp3j_addscripts', $style);
 	}
 	
-	// depreciated since 1.6
+	// Depreciated since 1.6
 	function mp3j_flag( $set = 1 ) {
 		do_action('mp3j_flag', $set);
 	}
@@ -91,7 +92,7 @@ if ( isset($mp3_fox) )
 		}
 	}
 	
-	// depreciated since 1.7 // 
+	// Depreciated since 1.7 
 	function mp3j_set_meta( $tracks, $captions = "", $startnum = 1 ) {
 		if ( empty($tracks) || !is_array($tracks) ) {
 			return;
@@ -128,7 +129,11 @@ if ( isset($mp3_fox) )
 	
 	// template hooks
 	add_action('wp_head', array(&$mp3_fox, 'header_scripts_handler'), 2);
+	//add_action('wp_enqueue_scripts', array(&$mp3_fox, 'header_scripts_handler'));
+	
+	
 	add_filter('the_content', array(&$mp3_fox, 'content_handler'));
+	
 	//add_filter('get_the_excerpt', array(&$mp3_fox, 'get_excerpt_handler'), 1);
 	add_action('wp_footer', array(&$mp3_fox, 'footercode_handler'));
 	add_action('mp3j_put', array(&$mp3_fox, 'template_tag_handler'), 10, 5 );
