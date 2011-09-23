@@ -5,7 +5,7 @@ Contributors: simon.ward
 Tags: mp3, audio, mp3 player, music player, audio player, jplayer, playlist, jquery, shortcode, widget, css, posts, page, sidebar 
 Requires at least: 2.8
 Tested up to: 3.2.1
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 
 Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
 
@@ -18,7 +18,7 @@ Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer
 - Customise the colour scheme on the settings page.
 - Uses a single instance of [jPlayer by Happyworm](http://jplayer.org/)
 - Good compatibility across browsers/platforms. Works on iPhone 4, iPad. Uses HTML 5 or Flash if necessary.
-- Editable player designs via CSS
+- Editable player designs via CSS.
 
 [View Demo here](http://sjward.org/jplayer-for-wordpress)
 
@@ -115,7 +115,7 @@ Check the filename spelling and the path/uri are correct. Remove any accented le
 Use widget areas (if available), or use the mp3j_addscripts() and mp3j_put() functions in template files. See help in the plugin for an example.
 
 = Player appears but something is broken? =
-Any number of reasons but the most commonly seen problem is poor use of a CDN or jQuery in theme files. Don't just shove your scripts in the header unless you like breaking stuff!
+Any number of reasons but the most commonly seen problem is poor use of a CDN or jQuery in theme files, check the page source for repeated scripts (including jquery-ui).
 
 = Report bugs/issues? =
 Either on the forum at Wordpress, or [here](http://sjward.org/contact).
@@ -123,17 +123,21 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 == Screenshots ==
 
-1. Players example 1.
-2. Players example 2.
-3. Popout player example. 
-4. Players example 3.
-5. Players example 4.
-6. Admin settings page.
-7. Colour settings.
-8. Other options.
+1. Players example 1
+2. Players example 2
+3. Popout player example 
+4. Players example 3
+5. Players example 4
+6. Admin settings page
+7. Colour settings
+8. Other options
 
 
 == Changelog ==
+
+= 1.7.3 =
+* Stopped files of audio/mpeg MIME type other than mp3 from showing on the player's library file list on the settings page. They won't appear in playlists when using 'FEED:LIB' now.  
+* Corrected graphics error introduced last update on the popout button, thanks to Peter for reporting.
 
 = 1.7.2 =
 * Fixed bug in the case where sidebars_widgets array was not defined (was throwing a php warning), thanks to Craig for reporting.
