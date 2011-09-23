@@ -123,14 +123,14 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 == Screenshots ==
 
-1. Players example 1
-2. Players example 2
-3. Popout player example 
-4. Players example 3
-5. Players example 4
-6. Admin settings page
-7. Colour settings
-8. Other options
+1. Players example 1.
+2. Players example 2.
+3. Popout player example. 
+4. Players example 3.
+5. Players example 4.
+6. Admin settings page.
+7. Colour settings.
+8. Other options.
 
 
 == Changelog ==
