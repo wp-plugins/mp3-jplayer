@@ -25,7 +25,7 @@ License: GPL2
 */
 	
 	
-/* Grab class definitions */
+/* grab class definitions */
 $mp3jpath = dirname(__FILE__);
 include_once( $mp3jpath . '/mp3j_main.php');
 include_once( $mp3jpath . '/mp3j_frontend.php'); // extends main
