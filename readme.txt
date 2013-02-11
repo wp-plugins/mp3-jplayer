@@ -9,7 +9,7 @@ Tested up to: 3.5.1
 Stable tag: 1.8
 
 
-Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
+Add mp3 audio players to posts, pages, and sidebars. HTML5/Flash. Uses jPlayer.
 
 == Description ==
 
