@@ -2,10 +2,12 @@
 Author URI: http://www.sjward.org
 Plugin URI: http://www.sjward.org/jplayer-for-wordpress
 Contributors: simon.ward
-Tags: mp3, audio, mp3 player, music player, audio player, jplayer, playlist, jquery, shortcode, widget, css, posts, page, sidebar 
+Donate link: http://www.sjward.org/jplayer-for-wordpress
+Tags: mp3, mp3 player, music player, audio, audio player, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html5 
 Requires at least: 2.8
-Tested up to: 3.2.1
-Stable tag: 1.7.3
+Tested up to: 3.5.1
+Stable tag: 1.8
+
 
 Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
 
@@ -34,7 +36,7 @@ As only the one instance of jPlayer is created there's no loss of performance or
 
 <br />
 <br />
-**Shortcodes**
+**Shortcodes - Basic usage**
 
 [mp3j] and [mp3t] add single-track players
 
@@ -111,11 +113,14 @@ Mp3's should be constant bit-rate (CBR) encoded at sample rates 44.1kHz, 22.05 k
 = Player says connecting but never plays? =
 Check the filename spelling and the path/uri are correct. Remove any accented letters from mp3 filenames (and re-upload if they're from the library). Check the mp3 encoding (see above).
 
+= Player just doesn't show up? =
+This will happen if the playlist you've asked for doesn't result in anything to play, for example if you're using 'FEED' and the folder path is remote, or if you're playing remote files and the option 'allow mp3s from other domains' is unticked.
+
 = Header and footer players? =
 Use widget areas (if available), or use the mp3j_addscripts() and mp3j_put() functions in template files. See help in the plugin for an example.
 
 = Player appears but something is broken? =
-Any number of reasons but the most commonly seen problem is poor use of a CDN or jQuery in theme files, check the page source for repeated scripts (including jquery-ui).
+Probably a javascript conflict, often a hard-coded script in a theme. check your page source from the browser (CTRL+U) for repeated inclusions of both jQuery and jQuery-UI. 
 
 = Report bugs/issues? =
 Either on the forum at Wordpress, or [here](http://sjward.org/contact).
@@ -123,17 +128,40 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 == Screenshots ==
 
-1. Players example 1.
-2. Players example 2.
-3. Popout player example. 
-4. Players example 3.
-5. Players example 4.
-6. Admin settings page.
-7. Colour settings.
-8. Other options.
+1. Playlist player examples
+2. A popout player example
+3. Single players and playlist player examples 
+4. The admin settings page
+5. Colour picker opened on the settings page.
+
 
 
 == Changelog ==
+
+= 1.8 =
+* Fixed bug in javascript that caused problems in WordPress 3.5 (players broke after a couple of clicks).
+* Fixed bug when single quotes ended up in a popout title (it broke players).
+* Fixed bug in widget when it was set with a non-existent page id (it broke players).
+* Fixed bug with mp3j_put function (it could pick up the adjacent post's tracks in some scenarios).  
+* Fixed bug with https urls.
+* Fixed bug in pick parameter.
+* Fixed bug with 'Allow mp3s from other domains' option (it affected single players when it was unticked).
+* Fixed display of hours on long mp3s (player will display the hours only when needed).
+* Fixed css that was hiding playlists in Opera browser.
+* Fixed titles running into captions.
+* Fixed titles obscuring slider motion (not IE proof). 
+* Added 'images' parameter on [mp3-jplayer], they can be set per track and are carried to the popout.
+* Added easier styling option via a 'style' parameter that can be used in shortcodes (takes class names separated by spaces). Some classes are included as follows: bigger1 bigger2 bigger3 bigger4 bigger5 smaller outline dark text bars100 bars150 bars200 bars250 nolistbutton nopopoutbutton nostop nopn wtransbars btransbars. See examples on the demo page.
+* Added new download option 'loggedin' which shows alternative text/link if visitor is not logged in.
+* Added shortcode [mp3-popout] which creates a link to a popout player.
+* Added volume slider option and shortcode parameter for [mp3t] and [mp3j] players.
+* Added order control of library mp3s (when using 'FEED:LIB'), options are (asc/desc) by upload date, title, filename, or caption/filename, this is a global setting (not per player).
+* Added new shortcode parameter (fsort="desc") for reversing folder playlist order.
+* Added option to run player shortcodes in manually written excerpts.
+* Added template tag - mp3j_div() for use in theme files when using players in hidden/collapsable tabs, lightboxes etc (allows players to function ok in hidden elements if flash gets used).
+* Added option to bypass jQuery / jQueryUI script requests.
+* Added choice of separators to use when writing playlists in shortcodes/widgets.
+* Many more improvements and minor fixes.
 
 = 1.7.3 =
 * Stopped files of audio/mpeg MIME type other than mp3 from showing on the player's library file list on the settings page. They won't appear in playlists when using 'FEED:LIB' now.  
