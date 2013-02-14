@@ -6,10 +6,10 @@ Donate link: http://www.sjward.org/jplayer-for-wordpress
 Tags: mp3, mp3 player, music player, audio, audio player, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html5 
 Requires at least: 2.8
 Tested up to: 3.5.1
-Stable tag: 1.8
+Stable tag: 1.8.1
 
 
-Add mp3 audio players to posts, pages, and sidebars. HTML5/Flash. Uses jPlayer.
+Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
 
 == Description ==
 
@@ -137,6 +137,9 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 
 == Changelog ==
+
+= 1.8.1 =
+* Some css corrections - missing image for the buttons on the 'custom' style, and the smaller font sizes when using the 'mods' option. 
 
 = 1.8 =
 * Fixed bug in javascript that caused problems in WordPress 3.5 (players broke after a couple of clicks).
