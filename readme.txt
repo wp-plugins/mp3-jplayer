@@ -6,7 +6,7 @@ Donate link: http://www.sjward.org/jplayer-for-wordpress
 Tags: mp3, mp3 player, music player, audio, audio player, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html5 
 Requires at least: 2.8
 Tested up to: 3.5.1
-Stable tag: 1.8.1
+Stable tag: 1.8.3
 
 
 Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
@@ -21,11 +21,12 @@ Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer
 - Uses a single instance of [jPlayer by Happyworm](http://jplayer.org/)
 - Good compatibility across browsers/platforms. Works on iPhone 4, iPad. Uses HTML 5 or Flash if necessary.
 - Editable player designs via CSS.
+- Multisite compatible.
 
 [View Demo here](http://sjward.org/jplayer-for-wordpress)
 
 <br />
-This plugin lets you add mp3 players to your site using shortcodes, widgets, and template tags. There's useful stuff on the settings page such as default folder setting, mp3 file lists, and plenty of shortcode parameters to control things like width, height, autoplay, volume etc. 
+This plugin lets you add mp3 players to your site using shortcodes, widgets, link replacement, and template tags. There's useful stuff on the settings page such as default folder setting, mp3 file lists, and plenty of shortcode parameters to control things like width, height, autoplay, volume etc. 
 
 You can play entire folders with one simple command, or the library, or make playlists track by track, randomise them, add titles and captions (or use the library ones), set playlists for download, hide your urls.
 
@@ -138,6 +139,15 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 == Changelog ==
 
+= 1.8.3 =
+* Moved to jQuery.jPlayer 2.2.0 (fixes plugin problems with recent flash release (v11.6) in browsers like IE and Firefox (time was displaying as 'NaN', tracks not advancing/autoplaying)).
+* Fixed the auto number option for arbitrary single players (they were all numbered 1!).
+* Fixed quotes in captions (they were unescaped still and would break players), thanks to Chris for reporting.
+* Fixed a couple of routines that could throw php warnings, thanks to Rami for reporting.
+* Added the much requested option to try force browsers into saving mp3 downloads (instead of playing them in some kinda built-in player). Maintains right click save-ability. No mobile support just yet. Switched on for local files by default. Can also be set up for remote files (see the help). Option is under 'Playlist player options' on the settings page. Please feedback any issues.
+* Added option to turn any mp3 links in a page into players, which means you can now add players using the 'Add media' button on the page/post edit screens. It has as an editable shortcode on the player settings page (under template options). Option is on by default. Switch it off near top of settings page.  
+* Added the 'style' parameter onto the MP3j-ui widget.
+
 = 1.8.1 =
 * Some css corrections - missing image for the buttons on the 'custom' style, and the smaller font sizes when using the 'mods' option. 
 
@@ -164,6 +174,7 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 * Added template tag - mp3j_div() for use in theme files when using players in hidden/collapsable tabs, lightboxes etc (allows players to function ok in hidden elements if flash gets used).
 * Added option to bypass jQuery / jQueryUI script requests.
 * Added choice of separators to use when writing playlists in shortcodes/widgets.
+* Added touchpunch.js for useable sliders on touch screen devices. 
 * Many more improvements and minor fixes.
 
 = 1.7.3 =
@@ -262,3 +273,5 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 = 1.0 =
 * First release
+
+
