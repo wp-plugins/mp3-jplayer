@@ -3,7 +3,7 @@
 Plugin Name: MP3-jPlayer
 Plugin URI: http://sjward.org/jplayer-for-wordpress
 Description: Add mp3 players to posts, pages, and sidebars. HTML5 with Flash fall back. Shortcodes, widgets, and template tags. See the help on the Settings Page for a full list of options. 
-Version: 1.8.1
+Version: 1.8.3
 Author: Simon Ward
 Author URI: http://www.sjward.org
 License: GPL2
@@ -26,20 +26,20 @@ License: GPL2
 
 $mp3j_path = dirname(__FILE__);
 include_once( $mp3j_path . '/mp3j_main.php');
-include_once( $mp3j_path . '/mp3j_frontend.php'); // extends main
+include_once( $mp3j_path . '/mp3j_frontend.php'); //extends main
 
 if ( class_exists("MP3j_Front") ) {
 	$mp3_fox = new MP3j_Front();
 }
 
 if ( isset($mp3_fox) ) {
-	include_once( $mp3j_path . '/mp3j_widget.php'); // ui widget
-	include_once( $mp3j_path . '/mp3j_sc-widget.php'); // sh Widget
+	include_once( $mp3j_path . '/mp3j_widget.php'); //ui widget
+	include_once( $mp3j_path . '/mp3j_sc-widget.php'); //sh Widget
 	
 	if ( is_admin() ) {
 		include_once( $mp3j_path . '/mp3j_admin.php'); //settings page
 
-		function mp3j_adminpage() { // add a settings menu page	
+		function mp3j_adminpage() { //add a settings menu page	
 			global $mp3_fox;
 			if ( function_exists('add_options_page') ) {
 				$pluginpage = add_options_page('MP3 jPlayer', 'MP3 jPlayer', 'manage_options', basename(__FILE__), 'mp3j_print_admin_page');  
@@ -49,7 +49,7 @@ if ( isset($mp3_fox) ) {
 			}
 		}
 
-		function mp3j_plugin_links( $links, $file ) { // add a settings link on plugins page 
+		function mp3j_plugin_links( $links, $file ) { //add a settings link on plugins page 
 			if( $file == 'mp3-jplayer/mp3jplayer.php' ) {
 				$settings_link = '<a href="options-general.php?page=mp3jplayer.php">'.__('Settings').'</a>';
 				array_unshift( $links, $settings_link );
@@ -90,7 +90,7 @@ if ( isset($mp3_fox) ) {
 	add_action( 'widgets_init', 'mp3jplayer_widget_init' );
 	
 	function mp3jshortcodes_widget_init() { 
-		register_widget( 'MP3j_single' ); //silly name but can't change it!
+		register_widget( 'MP3j_single' ); //silly name but can't change it now!
 	}
 	add_action( 'widgets_init', 'mp3jshortcodes_widget_init' );
 	
@@ -98,7 +98,6 @@ if ( isset($mp3_fox) ) {
 	add_shortcode('mp3t', array(&$mp3_fox, 'inline_play_handler'));
 	add_shortcode('mp3j', array(&$mp3_fox, 'inline_play_graphic'));
 	add_shortcode('mp3-jplayer', array(&$mp3_fox, 'primary_player'));
-	//add_shortcode('mp3-link', array(&$mp3_fox, 'link_plays_track')); //not in current version
 	add_shortcode('mp3-popout', array(&$mp3_fox, 'popout_link_player'));
 	
 // template hooks
@@ -109,6 +108,9 @@ if ( isset($mp3_fox) ) {
 	add_filter('mp3j_grab_library', array(&$mp3_fox, 'grablibrary_handler'), 10, 1 );
 	add_action('mp3j_debug', array(&$mp3_fox, 'debug_info'), 10, 1 );
 	add_action('mp3j_div', array(&$mp3_fox, 'write_jp_div'));
+	if ( $mp3_fox->theSettings['make_player_from_link'] == "true" ) {
+		add_filter('the_content', array(&$mp3_fox, 'replace_links'), 1);
+	}
 	
 // retired
 	function mp3j_set_meta( $tracks, $captions = "", $startnum = 1 ) { } //since 1.7
