@@ -2,7 +2,7 @@
 if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 	
 	// ---------------------- Update Me
-	var $version_of_plugin = "1.8.5"; 
+	var $version_of_plugin = "1.8.6"; 
 	var $M_no = 0;
 	var $F_no = 0;
 	var $S_no = 0;

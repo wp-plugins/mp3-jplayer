@@ -2,16 +2,18 @@
 <html>
 	<head>
 		<title></title>
-				
+		
+		<!-- MP3-jPlayer 1.8.6 --->
+			
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/ui.core.js'></script>
 		<script type='text/javascript' src='js/ui.widget.js'></script>
 		<script type='text/javascript' src='js/ui.mouse.js'></script>
 		<script type='text/javascript' src='js/ui.slider.js'></script>
-		<script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
+		<script type='text/javascript' src='js/jquery.jplayer.min2-5-0.js'></script>
 		<script type='text/javascript' src='js/jquery.ui.touch-punch.min.js'></script>
 		
-		<script type='text/javascript' src='js/mp3-jplayer-1.8.3.js'></script>
+		<script type='text/javascript' src='js/mp3-jplayer-1.8.5.js'></script>
 		
 <script type='text/javascript'>
 
