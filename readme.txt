@@ -6,7 +6,7 @@ Donate link: http://www.sjward.org/jplayer-for-wordpress
 Tags: mp3, mp3 player, music player, audio, audio player, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html5 
 Requires at least: 2.8
 Tested up to: 3.8.1
-Stable tag: 1.8.6
+Stable tag: 1.8.7
 
 
 Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer.
@@ -14,25 +14,25 @@ Add mp3 audio players to posts, pages, and sidebars. HTML5 / Flash. Uses jPlayer
 == Description ==
 
 - Flexible multi-player plugin.
-- Playlist and single-file players.
-- Pop-out player.
-- Individual control of height, width, volume, download etc.
+- Supports playback via HTML5 when possible, and has an automatic Flash fallback for other browsers.  
+- Add unlimited Playlist and single-file players into pages, posts, widgets, and template files.
+- Has a fully integrated Pop-out player that can be launched from playlist players, or from a stand-alone link.
 - Customise the colour scheme on the settings page.
-- Uses a single instance of [jPlayer by Happyworm](http://jplayer.org/)
-- Good compatibility across browsers/platforms. Works on iPhone 4, iPad. Uses HTML 5 or Flash if necessary.
+- Shortcode parameters give you individual control of player heights, widths, volumes, downloads etc.
+- Great compatibility across browsers / platforms with just a single file format. Works on iPhone, iPad, Android (2.3), Uses HTML 5 or Flash if necessary.
 - Editable player designs via CSS.
 - Multisite compatible.
 
 [View Demo here](http://sjward.org/jplayer-for-wordpress)
 
 <br />
-This plugin lets you add mp3 players to your site using shortcodes, widgets, link replacement, and template tags. There's useful stuff on the settings page such as default folder setting, mp3 file lists, and plenty of shortcode parameters to control things like width, height, autoplay, volume etc. 
+This plugin lets you add mp3 players to your site using shortcodes, widgets, link replacement, and template tags. There's lots of useful stuff on the settings page such as default folder setting, mp3 file lists, and plenty of shortcode parameters. 
 
 You can play entire folders with one simple command, or the library, or make playlists track by track, randomise them, add titles and captions (or use the library ones), set playlists for download, hide your urls.
 
-Widgets and tags can automatically pick up your track lists from posts/pages, or have their own playlists.
+Widgets and tags can automatically pick up your track lists from posts/pages (via custom fields), or have their own playlists.
 
-As only the one instance of jPlayer is created there's no loss of performance or speed however many players you put on a page.
+As only the one instance of the jPlayer engine is created there's no loss of performance or speed however many players you put on a page.
 
 
 <br />
@@ -106,7 +106,7 @@ Install manually:
 Just mp3 files.
 
 = Theme requirements? =
-Themes need the wp_head() and wp_footer() calls in them.
+Themes need the standard wp_head() and wp_footer() calls in them.
 
 = Mp3 encoding? =
 Mp3's should be constant bit-rate (CBR) encoded at sample rates 44.1kHz, 22.05 kHz, 11.025 kHz, though variable bit-rate (VBR) files seem to work ok.
@@ -138,6 +138,11 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 
 == Changelog ==
+
+= 1.8.7 =
+* Fixed autoplay in the popout when using the popout shortcode [mp3-popout].
+* Improved widget detection for scripts to allow for core's wp_convert_widget_settings.
+* Sorted the overlapping field on widget interface.
 
 = 1.8.6 =
 * Correct popout script references (apologies, missed in the last update meaning the popout didn't function).
