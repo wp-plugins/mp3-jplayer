@@ -534,7 +534,8 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 			$dload_info = ( $dload == "true" || $dload == "y" || $dload == "1" ) ? "true" : "false";
 			$autoplay = ( $autoplay == "true" || $autoplay == "y" || $autoplay == "1" ) ? "true" : "false";
 			$loop = ( $loop == "true" || $loop == "y" || $loop == "1" ) ? "true" : "false";
-			$this->JS['players'][] = "{ list: MP3J_PLAYLISTS." . $PlayerName . ", tr:0, type:'popout', lstate:" . $list . ", loop:" . $loop . ", play_txt:'" . $play . "', pause_txt:'', pp_title:'" . $pp_title . "', autoplay:false, download:" . $dload_info . ", vol:" . $vol . ", height:" . $pp_height . ", cssclass: '" . $cssclass . "' }";
+			//$this->JS['players'][] = "{ list: MP3J_PLAYLISTS." . $PlayerName . ", tr:0, type:'popout', lstate:" . $list . ", loop:" . $loop . ", play_txt:'" . $play . "', pause_txt:'', pp_title:'" . $pp_title . "', autoplay:false, download:" . $dload_info . ", vol:" . $vol . ", height:" . $pp_height . ", cssclass: '" . $cssclass . "' }";
+			$this->JS['players'][] = "{ list: MP3J_PLAYLISTS." . $PlayerName . ", tr:0, type:'popout', lstate:" . $list . ", loop:" . $loop . ", play_txt:'" . $play . "', pause_txt:'', pp_title:'" . $pp_title . "', autoplay:" . $autoplay . ", download:" . $dload_info . ", vol:" . $vol . ", height:" . $pp_height . ", cssclass: '" . $cssclass . "' }";
 		
 		//Make it	
 			$image_h = ( $image == "" ) ? "<div class=\"mp3j-popout-link\"></div>" : "<img style=\"float:left; margin-right:10px;\" src=\"" . $image . "\" />";

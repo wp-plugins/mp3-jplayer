@@ -329,7 +329,7 @@ if ( class_exists("WP_Widget") ) {
 						or <input type="radio" id="<?php echo $this->get_field_id( 'restrict_mode' ); ?>" name="<?php echo $this->get_field_name( 'restrict_mode' ); ?>" value="exclude" <?php if ($instance['restrict_mode'] == "exclude") { _e('checked="checked"', "mp3jplayerwidget"); }?> />
 						Exclude pages &nbsp;<input class="widefat" style="font-size:11px; width:200px;" type="text" id="<?php echo $this->get_field_id( 'restrict_list' ); ?>" name="<?php echo $this->get_field_name( 'restrict_list' ); ?>" value="<?php echo $instance['restrict_list']; ?>" /></p>
 					<p class="description" style="font-size:11px; margin-top:4px; margin-bottom:1px; <?php echo $helptext_col; ?>">A comma separated list, can use post ID's, <code>index</code>, <code>archive</code>, <code>post</code>, and <code>search</code>.</p> 
-					<p style="margin: -43px 0px 25px 420px; font-size: 11px;">Widget Heading: <input class="widefat" style="width:260px;" type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" /></p>	
+					<p style="margin: 0px 0px 25px 0px; font-size: 11px;">Widget Heading: <input class="widefat" style="width:260px;" type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" /></p>	
 				
 	<?php	
 			}

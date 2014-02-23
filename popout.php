@@ -3,7 +3,7 @@
 	<head>
 		<title></title>
 		
-		<!-- MP3-jPlayer 1.8.6 --->
+		<!-- MP3-jPlayer 1.8.7 --->
 			
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/ui.core.js'></script>
@@ -13,7 +13,7 @@
 		<script type='text/javascript' src='js/jquery.jplayer.min2-5-0.js'></script>
 		<script type='text/javascript' src='js/jquery.ui.touch-punch.min.js'></script>
 		
-		<script type='text/javascript' src='js/mp3-jplayer-1.8.5.js'></script>
+		<script type='text/javascript' src='js/mp3-jplayer-1.8.7.js'></script>
 		
 <script type='text/javascript'>
 
@@ -36,24 +36,27 @@ if( window.opener && !window.opener.closed && window.opener.MP3_JPLAYER && windo
 	MP3_JPLAYER.launched_ID = window.opener.MP3_JPLAYER.launched_ID;
 	MP3_JPLAYER.vars.dload_text = window.opener.MP3_JPLAYER.vars.dload_text;
 	MP3_JPLAYER.vars.force_dload = window.opener.MP3_JPLAYER.vars.force_dload;
-	//MP3_JPLAYER.vars.force_dl_remote = window.opener.MP3_JPLAYER.vars.force_dl_remote;
 	MP3_JPLAYER.vars.dl_remote_path = window.opener.MP3_JPLAYER.vars.dl_remote_path;
 	
 	var pl_info_wo = window.opener.MP3_JPLAYER.pl_info; //copy
+	var auto_play = ( window.opener.MP3_JPLAYER.was_playing !== 'undefined' && window.opener.MP3_JPLAYER.was_playing === true ) ? true : pl_info_wo[MP3_JPLAYER.launched_ID].autoplay;
+	window.opener.MP3_JPLAYER.was_playing = false;
+	
 	MP3_JPLAYER.pl_info = [{ 	
-		list:pl_info_wo[MP3_JPLAYER.launched_ID].list, 
-		tr:pl_info_wo[MP3_JPLAYER.launched_ID].tr,
-		type:'MI', 
-		lstate:pl_info_wo[MP3_JPLAYER.launched_ID].lstate, 
-		loop:pl_info_wo[MP3_JPLAYER.launched_ID].loop, 
-		play_txt:pl_info_wo[MP3_JPLAYER.launched_ID].play_txt, 
-		pause_txt:pl_info_wo[MP3_JPLAYER.launched_ID].pause_txt, 
-		pp_title:pl_info_wo[MP3_JPLAYER.launched_ID].pp_title, 
-		autoplay:pl_info_wo[MP3_JPLAYER.launched_ID].autoplay,
-		download:pl_info_wo[MP3_JPLAYER.launched_ID].download, 
-		vol:pl_info_wo[MP3_JPLAYER.launched_ID].vol,
-		height:pl_info_wo[MP3_JPLAYER.launched_ID].height,
-		cssclass:pl_info_wo[MP3_JPLAYER.launched_ID].cssclass
+		list:		pl_info_wo[MP3_JPLAYER.launched_ID].list, 
+		tr:			pl_info_wo[MP3_JPLAYER.launched_ID].tr,
+		type:		'MI', 
+		lstate:		pl_info_wo[MP3_JPLAYER.launched_ID].lstate, 
+		loop:		pl_info_wo[MP3_JPLAYER.launched_ID].loop, 
+		play_txt:	pl_info_wo[MP3_JPLAYER.launched_ID].play_txt, 
+		pause_txt:	pl_info_wo[MP3_JPLAYER.launched_ID].pause_txt, 
+		pp_title:	pl_info_wo[MP3_JPLAYER.launched_ID].pp_title, 
+		//autoplay:	pl_info_wo[MP3_JPLAYER.launched_ID].autoplay,
+		autoplay:	auto_play,
+		download:	pl_info_wo[MP3_JPLAYER.launched_ID].download, 
+		vol:		pl_info_wo[MP3_JPLAYER.launched_ID].vol,
+		height:		pl_info_wo[MP3_JPLAYER.launched_ID].height,
+		cssclass:	pl_info_wo[MP3_JPLAYER.launched_ID].cssclass
 	}];
 	
 	MP3_JPLAYER.vars.pp_playerheight = window.opener.MP3_JPLAYER.vars.pp_playerheight;

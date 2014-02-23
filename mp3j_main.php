@@ -2,7 +2,7 @@
 if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 	
 	// ---------------------- Update Me
-	var $version_of_plugin = "1.8.6"; 
+	var $version_of_plugin = "1.8.7"; 
 	var $M_no = 0;
 	var $F_no = 0;
 	var $S_no = 0;
@@ -421,7 +421,14 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 /*	Looks for any active widget that isn't ruled out by 
 	the page filter. Returns true if finds a widget that will be building. */		
 	function has_allowed_widget( $type ) {
-		$SBsettings = get_option('sidebars_widgets');
+		
+		//$SBsettings = get_option('sidebars_widgets');
+		global $_wp_sidebars_widgets;
+		if ( empty($_wp_sidebars_widgets) ) {
+			$SBsettings = get_option('sidebars_widgets', array());
+		} else {
+			$SBsettings = $_wp_sidebars_widgets;
+		}
 		if ( empty($SBsettings) || is_null($SBsettings) ) { return false; }
 		
 		$active = array();
@@ -435,7 +442,9 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 				}
 			}
 		}
+		
 		$this->dbug['arr'][] = $active;
+		
 		if ( !empty($active) ) { 
 			$name = "widget_". $type;
 			$ops = get_option($name);
@@ -637,7 +646,7 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 		}
 	//jplayer and plugin js
 		wp_enqueue_script( 'jquery.jplayer.min', $this->PluginFolder . '/js/jquery.jplayer.min2-5-0.js', false, '2.5.0' );
-		wp_enqueue_script( 'mp3-jplayer', $this->PluginFolder . '/js/mp3-jplayer-1.8.5.js', false, '1.8.5' );
+		wp_enqueue_script( 'mp3-jplayer', $this->PluginFolder . '/js/mp3-jplayer-1.8.7.js', false, '1.8.7' );
 	//css
 		if ( $theme == "styleF" ) { $themepath = $this->PluginFolder . "/css/players-1-8-silver.css"; }
 		elseif ( $theme == "styleG" ) { $themepath = $this->PluginFolder . "/css/players-1-8-dark.css"; }

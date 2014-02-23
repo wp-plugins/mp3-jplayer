@@ -71,7 +71,7 @@ if ( class_exists("WP_Widget") ) {
 						Exclude pages &nbsp;<input class="widefat" style="font-size:11px; width:200px;" type="text" id="<?php echo $this->get_field_id( 'restrict_list' ); ?>" name="<?php echo $this->get_field_name( 'restrict_list' ); ?>" value="<?php echo $instance['restrict_list']; ?>" /></p>
 					<p class="description" style="font-size:11px; color:#999999; margin-top:4px; margin-bottom:1px;">A comma separated list, can use post ID's, <code>index</code>, <code>archive</code>, <code>post</code>, and <code>search</code>.</p> 
 					<!-- Widget Heading -->
-					<p style="margin: -43px 0px 35px 420px; font-size:11px;">Widget Heading: <input style="width:260px;"class="widefat" type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" /></p>
+					<p style="margin: 0px 0px 35px 0px; font-size:11px;">Widget Heading: <input style="width:260px;"class="widefat" type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" /></p>
 				
 				<?php	
 			}
