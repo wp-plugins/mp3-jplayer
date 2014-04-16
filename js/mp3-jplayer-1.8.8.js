@@ -1,5 +1,5 @@
 /* 
-	MP3-jPlayer 1.8.5
+	MP3-jPlayer 1.8.8
    	www.sjward.org 
 */
 
@@ -80,7 +80,7 @@ var MP3_JPLAYER = {
 				that.startup();
 			},
 			//swfPath: that.plugin_path + '/js',
-			swfPath: that.plugin_path + '/js/Jplayer2-5-0.swf',
+			swfPath: that.plugin_path + '/js/Jplayer2-6-0.swf',
 			volume: 1,
 			supplied: "mp3",
 			wmode: "window",
@@ -225,7 +225,8 @@ var MP3_JPLAYER = {
 	startup: function () {
 		var j;
 		for (j = 0; j < this.pl_info.length; j += 1) {
-			if (this.pl_info[j].autoplay) {
+			//if (this.pl_info[j].autoplay) {
+			if ( this.pl_info[j].autoplay && (this.pl_info[j].type === 'single' || this.pl_info[j].type === 'MI') ) {
 				this.pl_info[j].autoplay = false;
 				this.E_change_track(j, this.pl_info[j].tr);
 				return;
@@ -469,9 +470,8 @@ var MP3_JPLAYER = {
 			this.vars.pp_windowheight = this.vars.pp_maxheight;
 		}
 		this.launched_ID = j;
-		if ( this.state === "playing" ) {
-			this.pl_info[j].autoplay = true;	
-		}
+		this.was_playing = ( this.state === "playing" ) ? true : false;
+		
 		this.E_stop(this.tID);
 		this.setit(this.plugin_path + '/mp3/silence.mp3'); 
 		this.playit(); //make chrome let go of last track (incase it didn't finish loading)
