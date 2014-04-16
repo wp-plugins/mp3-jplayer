@@ -2,8 +2,8 @@
 /* 
 Plugin Name: MP3-jPlayer
 Plugin URI: http://sjward.org/jplayer-for-wordpress
-Description: Add mp3 players to posts, pages, and sidebars. HTML5 with Flash fall back. Shortcodes, widgets, and template tags. See the help on the Settings Page for a full list of options. 
-Version: 1.8.7
+Description: Add HTML5 mp3 players to posts, pages, and sidebars. Has a Flash fall back. Use shortcodes, widgets, and template tags. See help on the Settings Page for a full list of options. 
+Version: 1.8.8
 Author: Simon Ward
 Author URI: http://www.sjward.org
 License: GPL2
@@ -102,7 +102,7 @@ if ( isset($mp3_fox) ) {
 	
 // template hooks
 	add_action('wp_head', array(&$mp3_fox, 'header_scripts_handler'), 2);
-	add_action('wp_footer', array(&$mp3_fox, 'footercode_handler'));
+	add_action('wp_footer', array(&$mp3_fox, 'footercode_handler'), 200); //process this late (enqueues are priority 20, must be after this!)
 	add_action('mp3j_put', array(&$mp3_fox, 'template_tag_handler'), 10, 1 );
 	add_action('mp3j_addscripts', array(&$mp3_fox, 'scripts_tag_handler'), 1, 1 );
 	add_filter('mp3j_grab_library', array(&$mp3_fox, 'grablibrary_handler'), 10, 1 );
