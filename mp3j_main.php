@@ -2,7 +2,7 @@
 if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 	
 	// ---------------------- Update Me
-	var $version_of_plugin = "1.8.7"; 
+	var $version_of_plugin = "1.8.8"; 
 	var $M_no = 0;
 	var $F_no = 0;
 	var $S_no = 0;
@@ -248,6 +248,10 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 
 /*	Adds any FEEDs into K's/V's */
 	function collect_delete_feeds( $values, $keys ){
+		
+		$Vs = array();
+		$Ks = array();
+		
 		foreach ( $values as $i => $val ) {  
 			if ( preg_match( "!^FEED:(DF|ID|LIB|/.*)$!i", $val ) == 1 ) { // keep ID for backwards compat
 				$feedV = stristr( $val, ":" );
@@ -645,8 +649,8 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 			$this->dbug['str'] .= "\nScripts are OFF (jQuery & UI)";
 		}
 	//jplayer and plugin js
-		wp_enqueue_script( 'jquery.jplayer.min', $this->PluginFolder . '/js/jquery.jplayer.min2-5-0.js', false, '2.5.0' );
-		wp_enqueue_script( 'mp3-jplayer', $this->PluginFolder . '/js/mp3-jplayer-1.8.7.js', false, '1.8.7' );
+		wp_enqueue_script( 'jquery.jplayer.min', $this->PluginFolder . '/js/jquery.jplayer.min2-6-0.js', false, '2.6.0' );
+		wp_enqueue_script( 'mp3-jplayer', $this->PluginFolder . '/js/mp3-jplayer-1.8.8.js', false, '1.8.8' );
 	//css
 		if ( $theme == "styleF" ) { $themepath = $this->PluginFolder . "/css/players-1-8-silver.css"; }
 		elseif ( $theme == "styleG" ) { $themepath = $this->PluginFolder . "/css/players-1-8-dark.css"; }
@@ -1045,29 +1049,77 @@ if ( !class_exists("MP3j_Main") ) { class MP3j_Main	{
 	}
 
 /*	Adds css to settings page. */
-	function mp3j_admin_header() {
+	function mp3j_admin_header()
+	{
 		echo "\n<link rel=\"stylesheet\" href=\"" .  $this->PluginFolder . "/css/mp3j-admin-1.8.css\" type=\"text/css\" media=\"screen\" />\n";
 	}
 		
 /*	Adds js to settings page. */
-	function mp3j_admin_footer() {
+	function mp3j_admin_footer()
+	{
 		echo "\n<script type=\"text/javascript\" src=\"" . $this->PluginFolder . "/js/mp3j-admin-1.8.js\"></script>";
 	}
 
+	
+	
+	function prep_value ( $field )
+	{	
+		$search = array( "'", '"', '\\' );
+		$option = str_replace( $search, "", $field );
+		$option = strip_tags( $option );
+		return $option;
+	}
+	
+	
+	
+	function prep_text ( $field )
+	{ 
+		$search = array(
+			'@<script[^>]*?>.*?</script>@si',  // Strip out javascript 
+			'@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly 
+			'@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments including CDATA 
+		); 
+		
+		$text = preg_replace( $search, '', $field ); 
+		return $text; 
+	}
+	
+	
+	function strip_scripts ( $field )
+	{ 
+		$search = array(
+			'@<script[^>]*?>.*?</script>@si',  // Strip out javascript 
+			'@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly 
+			'@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments including CDATA 
+		); 
+		
+		$text = preg_replace( $search, '', $field ); 
+		return $text; 
+	}
+
+	
+	
 /*	Preps path/uri option on settings page prior to saving. */
 	function prep_path ( $field ) {
-		$option = preg_replace( "!^www*\.!", "http://www.", $field );
-		if ( strpos($option, "http://") === false && strpos($option, "https://") === false) {
-			if (preg_match("!^/!", $option) == 0) { 
+		
+		$search = array( "'", '"', ';', '\\' );
+		$option = str_replace( $search, "", $field );
+		$option = strip_tags( $option );
+		$option = preg_replace( "!^www*\.!", "http://www.", $option ); //add default protocol if admin didn't
+		
+		if ( strpos($option, "http://") === false && strpos($option, "https://") === false) { //if local path was entered
+			
+			if (preg_match("!^/!", $option) == 0) { //if there was no starting slash then add one
 				$option = "/" . $option; 
 			} else { 
-				$option = preg_replace("!^/+!", "/", $option); 
+				$option = preg_replace("!^/+!", "/", $option); //or just make sure theres only one
 			} 
 		}
-		if (preg_match("!.+/+$!", $option) == 1) {
+		
+		if (preg_match("!.+/+$!", $option) == 1) { //remove any ending slashes
 			$option = preg_replace("!/+$!", "", $option); 
 		}
-		if ($option == "") {
+		if ($option == "") { //set to domain root
 			$option = "/";
 		}
 		return $option;

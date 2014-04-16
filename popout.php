@@ -3,17 +3,17 @@
 	<head>
 		<title></title>
 		
-		<!-- MP3-jPlayer 1.8.7 --->
+		<!-- MP3-jPlayer 1.8.8 --->
 			
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/ui.core.js'></script>
 		<script type='text/javascript' src='js/ui.widget.js'></script>
 		<script type='text/javascript' src='js/ui.mouse.js'></script>
 		<script type='text/javascript' src='js/ui.slider.js'></script>
-		<script type='text/javascript' src='js/jquery.jplayer.min2-5-0.js'></script>
+		<script type='text/javascript' src='js/jquery.jplayer.min2-6-0.js'></script>
 		<script type='text/javascript' src='js/jquery.ui.touch-punch.min.js'></script>
 		
-		<script type='text/javascript' src='js/mp3-jplayer-1.8.7.js'></script>
+		<script type='text/javascript' src='js/mp3-jplayer-1.8.8.js'></script>
 		
 <script type='text/javascript'>
 

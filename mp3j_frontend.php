@@ -203,6 +203,7 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 			'bold' => 'y',
 			'play' => 'Play',
 			'track' => '',
+			'tracks' => '',
 			'caption' => '',
 			'flip' => 'l',
 			'title' => '#USE#',
@@ -218,7 +219,11 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 		), $atts));
 		
 		$cssclass = $style;
-				
+		
+		if ( $track == '' && $tracks != '' ) {
+			$track = $tracks;
+		}
+		
 		$tn = $this->decide_S_playlist( $track, $caption );
 		if ( !$tn ) { 
 			$this->dbug['str'] .= "\nExiting (no track here)";
@@ -285,6 +290,7 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 		extract(shortcode_atts(array( // Defaults
 			'bold' => 'y',
 			'track' => '',
+			'tracks' => '',
 			'caption' => '',
 			'flip' => 'r',
 			'title' => '#USE#',
@@ -299,7 +305,11 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 		), $atts));
 		
 		$cssclass = $style;
-				
+		
+		if ( $track == '' && $tracks != '' ) {
+			$track = $tracks;
+		}
+		
 		$tn = $this->decide_S_playlist( $track, $caption );
 		if ( !$tn ) { 
 			$this->dbug['str'] .= "\nExiting (no track here)";
@@ -385,6 +395,7 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 		$pID = $this->Player_ID;
 		extract(shortcode_atts(array( // Defaults
 			'tracks' => '',
+			'track' => '',
 			'captions' => '',
 			'dload' => $this->theSettings['show_downloadmp3'],
 			'title' => '',
@@ -408,6 +419,10 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 		), $atts));
 				
 		$cssclass = $style;
+		
+		if ( $tracks == '' && $track != '' ) {
+			$tracks = $track;
+		}
 		
 		$Npl = $this->decide_M_playlist( $fsort, $tracks, $captions, $id, $pick, $shuffle, $images, $imglinks );
 		if ( !$Npl ) { 
@@ -489,6 +504,7 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 			$pID = $this->Player_ID;
 			extract(shortcode_atts(array( // Defaults
 				'tracks' => '',
+				'track' => '',
 				'captions' => '',
 				'dload' => $this->theSettings['show_downloadmp3'],
 				'title' => '',
@@ -511,6 +527,10 @@ if ( !class_exists("MP3j_Front") && class_exists("MP3j_Main") ) { class MP3j_Fro
 			), $atts));
 			
 			$cssclass = $style;
+			
+			if ( $tracks == '' && $track != '' ) {
+				$tracks = $track;
+			}
 			
 			$Npl = $this->decide_M_playlist( $fsort, $tracks, $captions, $id, $pick, $shuffle, $images, $imglinks );
 			if ( !$Npl ) { 
