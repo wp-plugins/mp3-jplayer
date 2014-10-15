@@ -5,8 +5,8 @@ Contributors: simon.ward
 Donate link: http://www.sjward.org/jplayer-for-wordpress
 Tags: mp3, mp3 player, music player, audio, audio player, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html5 
 Requires at least: 2.8
-Tested up to: 3.8.3
-Stable tag: 1.8.8
+Tested up to: 4.0
+Stable tag: 1.8.9
 
 
 Add HTML5 audio mp3 players to posts, pages, and sidebars. HTML 5 / Flash fallback.
@@ -138,6 +138,9 @@ Either on the forum at Wordpress, or [here](http://sjward.org/contact).
 
 
 == Changelog ==
+
+= 1.8.9 =
+* Fix for Android/Chrome. For info on the fix see Mark Panaghiston's posts at the bottom of [this jPlayer thread](https://groups.google.com/forum/#!msg/jplayer/BoVUNok0yl4/LU8q2wggQaYJ). 
 
 = 1.8.8 =
 * Updated jQuery.jPlayer to 2.6.0.
