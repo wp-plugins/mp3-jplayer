@@ -3,35 +3,34 @@ Author URI: http://sjward.org
 Plugin URI: http://mp3-jplayer.com
 Contributors: simon.ward
 Donate link: http://www.sjward.org/jplayer-for-wordpress
-Tags: audio, audio player, audio playlist, mp3 player, music player, playlist player, media player, audio widget, audio download, html5 audio, music player, create audio playlist, mp3, music, html5, flash, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html 5
+Tags: audio, audio player, audio playlist, mp3 player, music player, media, playlist player, media player, audio widget, audio download, html5 audio, music player, create audio playlist, mp3, music, html5, flash, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html 5
 License: GPLv2 or later
 Requires at least: 2.9
 Tested up to: 4.1
-Stable tag: 2.0
+Stable tag: 2.1
 
 Easy, Flexible Audio for WordPress.
 
 == Description ==
 
-= Mobile friendly HTML5 audio players and audio playlists =
+= Mobile friendly HTML5 audio players and audio playlist players =
 
-* Add player styling and colour options, flexible playlist players and single-file audio players, popout players and popout links, audio widgets, and downloads to your site.
+* Add audio player styling and colour options, flexible music playlist players and single-file audio players, popout players and popout links, audio widget players, and downloads to your site.
 
-* Works with all built-in WordPress options for adding your audio, including the recently introduced *Create Audio Playlist* drag & drop interface.
-
-
-[Player Demos](http://mp3-jplayer.com/playlist-players/)
-
-[How to Add Your Players](http://mp3-jplayer.com/adding-players)
-
-[Help & Docs](http://mp3-jplayer.com/help-docs)
+* Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
 
-MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music players. Here's a few of the features:
+[Player Demos](http://mp3-jplayer.com/player-skins/) <br>
+[How to Add Your Players](http://mp3-jplayer.com/adding-players/) <br>
+[Help & Docs](http://mp3-jplayer.com/help-docs/)
+
+
+MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music playlists. Here's a few of the features:
 
 * Flexible multi-player plugin, add unlimited players to pages, posts, sidebars, and template files.
 * Offer audio downloads to visitors or logged-in users.
 * Playlist entire folders with one simple command.
+* Can be selectively integrated with WordPress default audio players.
 * Customise the colour scheme, fonts, title and image placements and more on the Player Design page.
 * A fully integrated Pop-out player that can be launched from playlist players, or from a stand-alone link.
 * Shortcode parameters to give you individual control of player heights, widths, volumes, downloads, player styling, and allow you to play from your library, local folders or urls.
@@ -103,6 +102,12 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 
 == Changelog ==
+
+= 2.1 =
+* Fixed plugin compatibility with old versions of WP pre 3.6.
+* Fixed the widget's folder feed (it was picking up all audio regardless of chosen formats), and the admin-side info message that shows the track count.
+* Added a 'Show images' tick option on the widget (this controls the display of any featured images that you've set for the audio).
+* Made player's download link immediately visible upon page load (previously users needed to start a track in order to make the first download link available).  
 
 = 2.0 =
 * Improved plugin integration with core Wordpress media handling operations, such as those accessed with the 'Add Media' button, featured images for audio, embeded audio, attached audio, and pasted urls.
