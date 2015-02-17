@@ -14,7 +14,6 @@ Easy, Flexible Audio for WordPress.
 == Description ==
 
 = Mobile friendly HTML5 audio players and audio playlist players =
-
 * Add audio player styling and colour options, flexible music playlist players and single-file audio players, popout players and popout links, audio widget players, and downloads to your site.
 * Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
