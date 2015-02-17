@@ -3,20 +3,18 @@ Author URI: http://sjward.org
 Plugin URI: http://mp3-jplayer.com
 Contributors: simon.ward
 Donate link: http://www.sjward.org/jplayer-for-wordpress
-Tags: audio, audio player, audio playlist, mp3 player, music player, media, playlist player, media player, audio widget, audio download, html5 audio, music player, create audio playlist, mp3, music, html5, flash, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html 5
+Tags: audio, audio player, audio playlist, mp3 player, music player, media, mobile, iphone, ipad, integration, multisite, playlist player, media player, audio widget, audio download, html5 audio, music player, mp3, music, html5, flash, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html 5
 License: GPLv2 or later
 Requires at least: 2.9
 Tested up to: 4.1
-Stable tag: 2.1
+Stable tag: 2.2
 
 Easy, Flexible Audio for WordPress.
 
 == Description ==
 
 = Mobile friendly HTML5 audio players and audio playlist players =
-
 * Add audio player styling and colour options, flexible music playlist players and single-file audio players, popout players and popout links, audio widget players, and downloads to your site.
-
 * Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
 
@@ -27,17 +25,18 @@ Easy, Flexible Audio for WordPress.
 
 MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music playlists. Here's a few of the features:
 
-* Flexible multi-player plugin, add unlimited players to pages, posts, sidebars, and template files.
+* Flexible multi-player audio plugin, add unlimited audio players to pages, posts, sidebars, and template files.
 * Offer audio downloads to visitors or logged-in users.
-* Playlist entire folders with one simple command.
+* Playlist folders with one simple feed folder command.
 * Can be selectively integrated with WordPress default audio players.
 * Customise the colour scheme, fonts, title and image placements and more on the Player Design page.
-* A fully integrated Pop-out player that can be launched from playlist players, or from a stand-alone link.
-* Shortcode parameters to give you individual control of player heights, widths, volumes, downloads, player styling, and allow you to play from your library, local folders or urls.
+* A fully integrated Pop-out player that can be launched from playlist players, or from a stand-alone popout link.
+* Shortcode parameters to give you individual control of player heights, widths, volumes, downloads, styling, and allow you to play from your library, local folders or urls.
 * You can use custom fields to manage playlists.
 * Supports playback via HTML5 wherever possible, and falls back to Flash automatically if necessary.
 * Supports mp3, m4a, mp4, webm, oga, ogg, and wav files.
 * Very easy file counterparting, just upload.
+* Plays Icecast and Shoutcast audio streams.
 * Great compatibility across browsers / platforms. Works on iPhone, iPad, Android.
 * Editable player designs via CSS.
 * Multisite compatible.
@@ -91,17 +90,26 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 == Screenshots ==
 
-1. An example playlist player.
-2. A Popout player on a desktop.
-3. A single file player and a playlister.
+1. An example audio playlist player.
+2. A Popout playlist on a desktop.
+3. A single file music player and a music playlist.
 4. The plugin's Settings screen.
 5. The plugin's Design screen.
-6. Single-file Button players.
-7. Single-file Text players. 
+6. Single-file Button audio players.
+7. Single-file Text music players. 
 8. A Popout player playing on an Android phone.
 
 
 == Changelog ==
+
+= 2.2 =
+* Simplified error handling to try and eliminate the false triggering of messages that was occurring on some devices.
+* Added an option to control the frontend display of player error messages, the options are: Never / To admins only / To all. The setting is under advanced tab, default is admins only.
+* Fixed the bug on index/cat pages that broke players in some scenarios when using the 'Show in full content' and 'Show in excerpts' options.
+* Fixed the functioning of 'Show in excerpts' option (this option is still for manually written excerpts only).
+* Added developer methods for contolling css output and design page visibility.
+* Added support in the popout player for the stats collection modules (allows play and download via the popout to be captured).
+* Some css hardening on jQuery ui components.
 
 = 2.1 =
 * Fixed plugin compatibility with old versions of WP pre 3.6.
