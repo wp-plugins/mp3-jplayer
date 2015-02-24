@@ -7,14 +7,17 @@ Tags: audio, audio player, audio playlist, mp3 player, music player, media, mobi
 License: GPLv2 or later
 Requires at least: 2.9
 Tested up to: 4.1
-Stable tag: 2.2
+Stable tag: 2.3
 
 Easy, Flexible Audio for WordPress.
 
 == Description ==
 
 = Mobile friendly HTML5 audio players and audio playlist players =
-* Add audio player styling and colour options, flexible music playlist players and single-file audio players, popout players and popout links, audio widget players, and downloads to your site.
+
+* Adds style and colour options for audio players.
+* Enhanced music playlist players and single-file audio players
+* Additional popout players and popout links, audio widget players, and audio downloads.
 * Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
 
@@ -25,7 +28,7 @@ Easy, Flexible Audio for WordPress.
 
 MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music playlists. Here's a few of the features:
 
-* Flexible multi-player audio plugin, add unlimited audio players to pages, posts, sidebars, and template files.
+* Flexible multi-player audio plugin, add unlimited music players to pages, posts, sidebars, and template files.
 * Offer audio downloads to visitors or logged-in users.
 * Playlist folders with one simple feed folder command.
 * Can be selectively integrated with WordPress default audio players.
@@ -101,6 +104,11 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 
 == Changelog ==
+
+= 2.3 =
+* Fixed a major issue on index/cat/search type pages that could incorrectly assign the playlists or break players in some scenarios.
+* Added support for custom js (for skin extensions) on the player Design page.
+* Renamed the MP3-jPlayer plugin class instance to MP3JP.
 
 = 2.2 =
 * Simplified error handling to try and eliminate the false triggering of messages that was occurring on some devices.
