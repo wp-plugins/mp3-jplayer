@@ -7,7 +7,7 @@ Tags: audio, audio player, audio playlist, mp3 player, music player, media, mobi
 License: GPLv2 or later
 Requires at least: 2.9
 Tested up to: 4.1
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 
 Easy, Flexible Audio for WordPress.
 
@@ -15,15 +15,15 @@ Easy, Flexible Audio for WordPress.
 
 = Mobile friendly HTML5 audio players and audio playlist players =
 
-* Adds style and colour options for audio players.
-* Enhanced music playlist players and single-file audio players
-* Additional popout players and popout links, audio widget players, and audio downloads.
+* Style and colour options for your audio players.
+* Flexible Music playlist players and single-file audio players.
+* Popout players and popout links, audio widget players, and smooth audio downloads.
 * Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
 
-[Player Demos](http://mp3-jplayer.com/player-skins/) <br>
+[Basic Demo - Showing the included player skins](http://mp3-jplayer.com/player-skins/) <br>
 [How to Add Your Players](http://mp3-jplayer.com/adding-players/) <br>
-[Help & Docs](http://mp3-jplayer.com/help-docs/)
+[Help & Docs main page](http://mp3-jplayer.com/help-docs/)
 
 
 MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music playlists. Here's a few of the features:
@@ -43,7 +43,6 @@ MP3-jPlayer will expand WP's native shortcodes with new functions and options, g
 * Great compatibility across browsers / platforms. Works on iPhone, iPad, Android.
 * Editable player designs via CSS.
 * Multisite compatible.
-
 
 
 See [the plugin's home page](http://mp3-jplayer.com) for info, demos, documentation, and help articles.
@@ -105,12 +104,19 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 == Changelog ==
 
+= 2.3.2 =
+* Fixed the pick-up of titles and images when playing attached audio using the playlist widget.
+* Added ordering options for attached audio. Any audio attached to a page or post will now be ordered according to your setting on the player's 'Settings' page. You can order them by title or upload date, for any other setting they'll default to WP's menu order. ASC/DESC controls the direction.
+* Improved the 'novol' class for hiding volume controls, and added new modifier names 'nobars', 'nocase' which let you hide the bars, and the button bar background on playlist players.
+* Improved js robustness for increased compatibility across different themes/setups.
+* Added new developer methods - provide a volume scale factor (MP3_JPLAYER.factors.vol), and provide the available image data to callbacks regardless of the player or list type.
+
 = 2.3.1 =
 * Added developer methods for hooking into the player's Javascript events, these also add support for some of the up-coming extensions.
 * Corrected the help message admin-side that shows on the widget when it's set to an invalid path.
 
 = 2.3 =
-* Fixed a major issue on index/cat/search type pages that could incorrectly assign the playlists or break players in some scenarios.
+* Fixed an issue on index/cat/search type pages that could incorrectly assign the playlists or break players in some scenarios.
 * Added support for custom js (for skin extensions) on the player Design page.
 * Renamed the MP3-jPlayer plugin class instance to MP3JP.
 
