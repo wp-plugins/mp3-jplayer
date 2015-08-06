@@ -6,8 +6,8 @@ Donate link: http://www.sjward.org/jplayer-for-wordpress
 Tags: audio, audio player, audio playlist, mp3 player, music player, media, mobile, iphone, ipad, integration, multisite, playlist player, media player, audio widget, audio download, html5 audio, music player, mp3, music, html5, flash, jplayer, playlist, jquery, shortcode, widget, css, post, page, sidebar, html 5
 License: GPLv2 or later
 Requires at least: 2.9
-Tested up to: 4.1
-Stable tag: 2.3.2
+Tested up to: 4.2
+Stable tag: 2.3.3
 
 Easy, Flexible Audio for WordPress.
 
@@ -15,9 +15,10 @@ Easy, Flexible Audio for WordPress.
 
 = Mobile friendly HTML5 audio players and audio playlist players =
 
-* Style and colour options for your audio players.
-* Flexible Music playlist players and single-file audio players.
-* Popout players and popout links, audio widget players, and smooth audio downloads.
+* Flexible multi-player audio plugin.
+* Play from your library, uploaded folders, and urls. 
+* Player style, colour, and layout options.
+* Popout players and popout links, audio widgets, and smooth audio downloads.
 * Works with all built-in WordPress options for adding your music, including the recently introduced *Create Audio Playlist* drag & drop interface.
 
 
@@ -28,8 +29,8 @@ Easy, Flexible Audio for WordPress.
 
 MP3-jPlayer will expand WP's native shortcodes with new functions and options, giving you a lot of choice in how to set up your music playlists. Here's a few of the features:
 
-* Flexible multi-player audio plugin, add unlimited music players to pages, posts, sidebars, and template files.
-* Offer audio downloads to visitors or logged-in users.
+* Add unlimited music players to pages, posts, sidebars, and template files.
+* Offer downloads to visitors or logged-in users.
 * Playlist folders with one simple feed folder command.
 * Can be selectively integrated with WordPress default audio players.
 * Customise the colour scheme, fonts, title and image placements and more on the Player Design page.
@@ -43,6 +44,9 @@ MP3-jPlayer will expand WP's native shortcodes with new functions and options, g
 * Great compatibility across browsers / platforms. Works on iPhone, iPad, Android.
 * Editable player designs via CSS.
 * Multisite compatible.
+* Fully re-skinable.
+* Add-ons available such as stats collection.
+* Extensible plugin architecture and developer features. 
 
 
 See [the plugin's home page](http://mp3-jplayer.com) for info, demos, documentation, and help articles.
@@ -103,6 +107,12 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 
 == Changelog ==
+
+= 2.3.3 =
+* Added an option to use ID3 tag info for the track titles. The option is on the settings page under the files tab. Notes: 1)This option is for files uploaded to your media library only. 2)When selected players will display the title and artist info from the media's ID3 meta captured during upload. 3)This feature is supported in WP 3.6 and higher.
+* Added a settings page option for single file players to position the play button on the left or right hand side (equivalent to using the shortcode param 'flip').  
+* Fixed library title pickup that was failing in certain scenarios.
+* Added some new developer hooks.
 
 = 2.3.2 =
 * Fixed the pick-up of titles and images when playing attached audio using the playlist widget.
