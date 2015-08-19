@@ -7,7 +7,7 @@ Tags: audio, audio player, audio playlist, mp3 player, music player, media, mobi
 License: GPLv2 or later
 Requires at least: 2.9
 Tested up to: 4.2
-Stable tag: 2.3.3
+Stable tag: 2.4.0
 
 Easy, Flexible Audio for WordPress.
 
@@ -107,6 +107,12 @@ Either on the [forum at Wordpress](https://wordpress.org/support/plugin/mp3-jpla
 
 
 == Changelog ==
+
+= 2.4 =
+* Added a simple colour scheme setting for the single file players that allows very easy theming.
+* Added new track title and captioning settings, allowing you to choose which ID3 data to display for your media library files. Choose from title, artist, album, caption, and upload date.
+* Added an option to flip the playlist player controls to the left. Use the modifier name 'flip' on the design page or in a shortcode.
+* Added an option to display track captions within the playlists.
 
 = 2.3.3 =
 * Added an option to use ID3 tag info for the track titles. The option is on the settings page under the files tab. Notes: 1)This option is for files uploaded to your media library only. 2)When selected players will display the title and artist info from the media's ID3 meta captured during upload. 3)This feature is supported in WP 3.6 and higher.
